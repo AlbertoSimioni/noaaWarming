@@ -1,16 +1,14 @@
 import scala.io.Source
 
-object Parser {
     var tempList = Seq()
 
-  def main(args: Array[String]): Unit = {
     val filename = "data.txt"
     val lines = Source.fromFile(filename).getLines().to[Seq]
     //println(line.takeRight(5))
     //println(line.dropRight(line.length - 5))
     println(lines.map(parseLine))
 
-  }
+  
   /**
  * Parsing
  */
@@ -77,7 +75,7 @@ def parseLine(line: String): Map[String, String] = {
 }
 
 
-}
+
 
 
   //   class Temperature{
