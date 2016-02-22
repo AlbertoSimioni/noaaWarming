@@ -1,6 +1,6 @@
-->Write down data uncoded to file
+->Show how we parsed the data
+    -how data are ordered: One file per station, inside file ordered per date/hour
 ->algorithms to use
-    -see how they are ordered: One file per station, inside file ordered per date/hour
     -Decide which data are useful
     -We want to calculate average, median, max, min temperatures for each stations
     or grouping the stations that are close. To do that we precompute the results for various data range
