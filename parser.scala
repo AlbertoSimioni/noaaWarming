@@ -1,14 +1,13 @@
 import scala.io.Source
+var tempList = Seq()
 
-    var tempList = Seq()
-
-    val filename = "010010-99999-2016"
-    val lines = Source.fromFile(filename).getLines().to[Seq]
+val filename = "010010-99999-2016"
+val lines = Source.fromFile(filename).getLines().to[Seq]
     //println(line.takeRight(5))
     //println(line.dropRight(line.length - 5))
     //println(lines.map(parseLine))
 lines.map(parseLine)
-  
+
   /**
  * Parsing
  */
@@ -20,7 +19,7 @@ def parseLine(line: String): Map[String, String] = {
     val length: Int,
     val name: String,
     val description: String)
- 
+
 
   val fields = Seq(
     Field(1, 4, 4, "var_length", "Length"),
@@ -56,16 +55,18 @@ def parseLine(line: String): Map[String, String] = {
     Field(105, 105, 1, "sea_lev_flag", "Sea Level Flag")) //qaulity
 
   val empty = Map[String, String]().withDefaultValue("")
-
+  val output = scala.tools.nsc.io.File("output.txt");
   if (line.length >= 61) {
     fields.foldLeft(empty) { (m, f) =>
       val value = line.substring(f.start - 1, f.end).trim
       val recoded = if (value == "-9999") "" else value
       if (f.name =="air_temp"){
-      val sign=line.substring(f.start - 1, f.start).trim
-      val temp=line.substring(f.start, f.end).trim.toInt
-      println(sign + " " + temp)
+        val sign=line.substring(f.start - 1, f.start).trim
+        val temp=line.substring(f.start, f.end).trim.toInt
+        output.appendAll(f.name + ": "+ sign + " " + temp + "\n" );
+      //println(sign + " " + temp)
     }
+      output.appendAll(f.name + ": "+ value +"\n")
       m.updated(f.name, recoded)
     }
   } else {
