@@ -1,0 +1,15 @@
+->Write down data uncoded to file
+->algorithms to use
+    -see how they are ordered: One file per station, inside file ordered per date/hour
+    -Decide which data are useful
+    -We want to calculate average, median, max, min temperatures for each stations
+    or grouping the stations that are close. To do that we precompute the results for various data range
+    The results data should be small enough to be possible to mantain different result sets
+    to compute them we can start by calculating the statistic result on the smallest data range and from
+    this compute it for larger data ranges. (maybe there is a problem with the median)
+->decide how to analyze them -> Still to dedice
+->list the tools for the UI
+    -Google maps
+    -Heatmap -> reference to the javascript library
+    -You can press on a single point in a map and see the textual data of that station
+    -Possibility to change the data range and to change the heatmap with the interested statistic (min,max..)
