@@ -30,8 +30,8 @@ def parseLine(line: String): Map[String, String] = {
     Field(35, 41, 7, "long", "Longitude"), //MIN: -179999 MAX: +180000 UNITS: Angular Degrees
     Field(42, 46, 5, "report Type", "Report Type"),
     Field(47, 51, 5, "elev", "Elevation"), //MIN: -0400 MAX: +8850
-    Field(52, 56, 5, "call letters", "Precipitation 1-Hour (mm)"),
-    Field(57, 60, 4, "precip 6h", "Precipitation 6-Hour (mm)"), //quality control process name
+    Field(52, 56, 5, "call letters", ""),
+    Field(57, 60, 4, "qc_level", "Quality control"), //quality control process name
     Field(61, 63, 3, "wind_dir", "Wind Direction"), //MIN: 001 MAX: 360 UNITS: starting from true north
     Field(64, 64, 1, "wind dir flag", "Wind Direction Flag"), //direction quality code
     Field(65, 65, 1, "wind_type", "Wind Type"), //Descriptor of the wind

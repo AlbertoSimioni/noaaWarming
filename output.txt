@@ -1,0 +1,4232 @@
+usaf_id: 010010
+date: 20160101
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.7
+sea_lev: 09972
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160101
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.6
+sea_lev: 09974
+usaf_id: 010010
+date: 20160101
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.5
+sea_lev: 09973
+usaf_id: 010010
+date: 20160101
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 09967
+usaf_id: 010010
+date: 20160101
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 09964
+usaf_id: 010010
+date: 20160101
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.2
+sea_lev: 09959
+usaf_id: 010010
+date: 20160101
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 09957
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160101
+gmt: 0700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 1.7
+sea_lev: 09955
+usaf_id: 010010
+date: 20160101
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 09955
+usaf_id: 010010
+date: 20160101
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 09958
+usaf_id: 010010
+date: 20160101
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 09959
+usaf_id: 010010
+date: 20160101
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 09961
+usaf_id: 010010
+date: 20160101
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 09958
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160101
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.3
+sea_lev: 09965
+usaf_id: 010010
+date: 20160101
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 09962
+usaf_id: 010010
+date: 20160101
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.3
+sea_lev: 09963
+usaf_id: 010010
+date: 20160101
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.0
+sea_lev: 09965
+usaf_id: 010010
+date: 20160101
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.9
+sea_lev: 09969
+usaf_id: 010010
+date: 20160101
+gmt: 1800
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 0.9
+sea_lev: 09975
+prechrs: 12
+precdep: 
+usaf_id: 010010
+date: 20160101
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.7
+sea_lev: 09981
+usaf_id: 010010
+date: 20160101
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.3
+sea_lev: 09988
+usaf_id: 010010
+date: 20160101
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.0
+sea_lev: 09997
+usaf_id: 010010
+date: 20160101
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10006
+usaf_id: 010010
+date: 20160101
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 1.7
+sea_lev: 10016
+usaf_id: 010010
+date: 20160102
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10025
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160102
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10032
+usaf_id: 010010
+date: 20160102
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 10038
+usaf_id: 010010
+date: 20160102
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10045
+usaf_id: 010010
+date: 20160102
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10048
+usaf_id: 010010
+date: 20160102
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10049
+usaf_id: 010010
+date: 20160102
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10046
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160102
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.5
+sea_lev: 10039
+usaf_id: 010010
+date: 20160102
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10035
+usaf_id: 010010
+date: 20160102
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.6
+sea_lev: 10023
+usaf_id: 010010
+date: 20160102
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 4.0
+sea_lev: 10022
+usaf_id: 010010
+date: 20160102
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 3.5
+sea_lev: 10023
+usaf_id: 010010
+date: 20160102
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 3.5
+sea_lev: 10023
+prechrs: 06
+precdep: 2.0
+usaf_id: 010010
+date: 20160102
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 3.0
+sea_lev: 10020
+usaf_id: 010010
+date: 20160102
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10020
+usaf_id: 010010
+date: 20160102
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10020
+usaf_id: 010010
+date: 20160102
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.7
+sea_lev: 10024
+usaf_id: 010010
+date: 20160102
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.7
+sea_lev: 10030
+usaf_id: 010010
+date: 20160102
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.5
+sea_lev: 10039
+prechrs: 12
+precdep: 4.0
+usaf_id: 010010
+date: 20160102
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10046
+usaf_id: 010010
+date: 20160102
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 10054
+usaf_id: 010010
+date: 20160102
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10059
+usaf_id: 010010
+date: 20160102
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 10065
+usaf_id: 010010
+date: 20160102
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 1.7
+sea_lev: 10075
+usaf_id: 010010
+date: 20160103
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10087
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160103
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10093
+usaf_id: 010010
+date: 20160103
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.3
+sea_lev: 10101
+usaf_id: 010010
+date: 20160103
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.7
+sea_lev: 10106
+usaf_id: 010010
+date: 20160103
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.0
+sea_lev: 10112
+usaf_id: 010010
+date: 20160103
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.0
+sea_lev: 10114
+usaf_id: 010010
+date: 20160103
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.9
+sea_lev: 10121
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160103
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.2
+sea_lev: 10124
+usaf_id: 010010
+date: 20160103
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.3
+sea_lev: 10126
+usaf_id: 010010
+date: 20160103
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10132
+usaf_id: 010010
+date: 20160103
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.1
+sea_lev: 10135
+usaf_id: 010010
+date: 20160103
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.0
+sea_lev: 10134
+usaf_id: 010010
+date: 20160103
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.3
+sea_lev: 10136
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160103
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.6
+sea_lev: 10135
+usaf_id: 010010
+date: 20160103
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.0
+sea_lev: 10133
+usaf_id: 010010
+date: 20160103
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10133
+usaf_id: 010010
+date: 20160103
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.8
+sea_lev: 10133
+usaf_id: 010010
+date: 20160103
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.6
+sea_lev: 10135
+usaf_id: 010010
+date: 20160103
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.8
+sea_lev: 10137
+prechrs: 12
+precdep: 0.8
+usaf_id: 010010
+date: 20160103
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10138
+usaf_id: 010010
+date: 20160103
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10141
+usaf_id: 010010
+date: 20160103
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10142
+usaf_id: 010010
+date: 20160103
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10145
+usaf_id: 010010
+date: 20160103
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 1.5
+sea_lev: 10146
+usaf_id: 010010
+date: 20160104
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10147
+prechrs: 06
+precdep: 0.8
+usaf_id: 010010
+date: 20160104
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10149
+usaf_id: 010010
+date: 20160104
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10152
+usaf_id: 010010
+date: 20160104
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10151
+usaf_id: 010010
+date: 20160104
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10152
+usaf_id: 010010
+date: 20160104
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10154
+usaf_id: 010010
+date: 20160104
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10157
+prechrs: 12
+precdep: 1.0
+usaf_id: 010010
+date: 20160104
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10159
+usaf_id: 010010
+date: 20160104
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10162
+usaf_id: 010010
+date: 20160104
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10164
+usaf_id: 010010
+date: 20160104
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10166
+usaf_id: 010010
+date: 20160104
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10165
+usaf_id: 010010
+date: 20160104
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10167
+prechrs: 06
+precdep: 0.7
+usaf_id: 010010
+date: 20160104
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10169
+usaf_id: 010010
+date: 20160104
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10170
+usaf_id: 010010
+date: 20160104
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10167
+usaf_id: 010010
+date: 20160104
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10168
+usaf_id: 010010
+date: 20160104
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10169
+usaf_id: 010010
+date: 20160104
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10172
+prechrs: 12
+precdep: 0.7
+usaf_id: 010010
+date: 20160104
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.5
+sea_lev: 10173
+usaf_id: 010010
+date: 20160104
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.1
+sea_lev: 10173
+usaf_id: 010010
+date: 20160104
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10172
+usaf_id: 010010
+date: 20160104
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.5
+sea_lev: 10170
+usaf_id: 010010
+date: 20160104
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10168
+usaf_id: 010010
+date: 20160105
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.8
+sea_lev: 10167
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160105
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.3
+sea_lev: 10167
+usaf_id: 010010
+date: 20160105
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10166
+usaf_id: 010010
+date: 20160105
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10165
+usaf_id: 010010
+date: 20160105
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 10162
+usaf_id: 010010
+date: 20160105
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10163
+usaf_id: 010010
+date: 20160105
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10163
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160105
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10162
+usaf_id: 010010
+date: 20160105
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.6
+sea_lev: 10163
+usaf_id: 010010
+date: 20160105
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10162
+usaf_id: 010010
+date: 20160105
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.5
+sea_lev: 10165
+usaf_id: 010010
+date: 20160105
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10163
+usaf_id: 010010
+date: 20160105
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10162
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160105
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10159
+usaf_id: 010010
+date: 20160105
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10159
+usaf_id: 010010
+date: 20160105
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10159
+usaf_id: 010010
+date: 20160105
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10158
+usaf_id: 010010
+date: 20160105
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10158
+usaf_id: 010010
+date: 20160105
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10157
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160105
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10156
+usaf_id: 010010
+date: 20160105
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10152
+usaf_id: 010010
+date: 20160105
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.6
+sea_lev: 10152
+usaf_id: 010010
+date: 20160105
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.5
+sea_lev: 10148
+usaf_id: 010010
+date: 20160105
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 1.4
+sea_lev: 10145
+usaf_id: 010010
+date: 20160106
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10139
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160106
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10134
+usaf_id: 010010
+date: 20160106
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.4
+sea_lev: 10133
+usaf_id: 010010
+date: 20160106
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10129
+usaf_id: 010010
+date: 20160106
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10124
+usaf_id: 010010
+date: 20160106
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10122
+usaf_id: 010010
+date: 20160106
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10116
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160106
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.5
+sea_lev: 10112
+usaf_id: 010010
+date: 20160106
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10113
+usaf_id: 010010
+date: 20160106
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10110
+usaf_id: 010010
+date: 20160106
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10106
+usaf_id: 010010
+date: 20160106
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.9
+sea_lev: 10104
+usaf_id: 010010
+date: 20160106
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.8
+sea_lev: 10103
+prechrs: 06
+precdep: 0.2
+usaf_id: 010010
+date: 20160106
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10107
+usaf_id: 010010
+date: 20160106
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10109
+usaf_id: 010010
+date: 20160106
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.5
+sea_lev: 10111
+usaf_id: 010010
+date: 20160106
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.9
+sea_lev: 10114
+usaf_id: 010010
+date: 20160106
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10121
+usaf_id: 010010
+date: 20160106
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10127
+prechrs: 12
+precdep: 0.2
+usaf_id: 010010
+date: 20160106
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.2
+sea_lev: 10131
+usaf_id: 010010
+date: 20160106
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.2
+sea_lev: 10133
+usaf_id: 010010
+date: 20160106
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10136
+usaf_id: 010010
+date: 20160106
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.2
+sea_lev: 10145
+usaf_id: 010010
+date: 20160106
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 2.2
+sea_lev: 10147
+usaf_id: 010010
+date: 20160107
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.4
+sea_lev: 10153
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160107
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.3
+sea_lev: 10156
+usaf_id: 010010
+date: 20160107
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.2
+sea_lev: 10160
+usaf_id: 010010
+date: 20160107
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.1
+sea_lev: 10164
+usaf_id: 010010
+date: 20160107
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 2.0
+sea_lev: 10166
+usaf_id: 010010
+date: 20160107
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10169
+usaf_id: 010010
+date: 20160107
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.7
+sea_lev: 10175
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160107
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.6
+sea_lev: 10179
+usaf_id: 010010
+date: 20160107
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.3
+sea_lev: 10186
+usaf_id: 010010
+date: 20160107
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 1.2
+sea_lev: 10191
+usaf_id: 010010
+date: 20160107
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.7
+sea_lev: 10195
+usaf_id: 010010
+date: 20160107
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.7
+sea_lev: 10194
+usaf_id: 010010
+date: 20160107
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.5
+sea_lev: 10194
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160107
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.1
+sea_lev: 10197
+usaf_id: 010010
+date: 20160107
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.4
+sea_lev: 10202
+usaf_id: 010010
+date: 20160107
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.2
+sea_lev: 10204
+usaf_id: 010010
+date: 20160107
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.0
+sea_lev: 10197
+usaf_id: 010010
+date: 20160107
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.1
+sea_lev: 10199
+usaf_id: 010010
+date: 20160107
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10198
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160107
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10198
+usaf_id: 010010
+date: 20160107
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.4
+sea_lev: 10195
+usaf_id: 010010
+date: 20160107
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.4
+sea_lev: 10196
+usaf_id: 010010
+date: 20160107
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.2
+sea_lev: 10195
+usaf_id: 010010
+date: 20160107
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10193
+usaf_id: 010010
+date: 20160108
+gmt: 0000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.5
+sea_lev: 10190
+prechrs: 06
+precdep: 
+usaf_id: 010010
+date: 20160108
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.8
+sea_lev: 10187
+usaf_id: 010010
+date: 20160108
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.1
+sea_lev: 10185
+usaf_id: 010010
+date: 20160108
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10184
+usaf_id: 010010
+date: 20160108
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10178
+usaf_id: 010010
+date: 20160108
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.0
+sea_lev: 10175
+usaf_id: 010010
+date: 20160108
+gmt: 0600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -3.7
+sea_lev: 10174
+usaf_id: 010010
+date: 20160108
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10171
+usaf_id: 010010
+date: 20160108
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.1
+sea_lev: 10172
+usaf_id: 010010
+date: 20160108
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10171
+usaf_id: 010010
+date: 20160108
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.0
+sea_lev: 10170
+usaf_id: 010010
+date: 20160108
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.3
+sea_lev: 10168
+usaf_id: 010010
+date: 20160108
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.9
+sea_lev: 10169
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160108
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.8
+sea_lev: 10169
+usaf_id: 010010
+date: 20160108
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10168
+usaf_id: 010010
+date: 20160108
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10166
+usaf_id: 010010
+date: 20160108
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.2
+sea_lev: 10165
+usaf_id: 010010
+date: 20160108
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.9
+sea_lev: 10164
+usaf_id: 010010
+date: 20160108
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.9
+sea_lev: 10165
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160108
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.0
+sea_lev: 10167
+usaf_id: 010010
+date: 20160108
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.2
+sea_lev: 10168
+usaf_id: 010010
+date: 20160108
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.0
+sea_lev: 10170
+usaf_id: 010010
+date: 20160108
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.9
+sea_lev: 10171
+usaf_id: 010010
+date: 20160108
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.3
+sea_lev: 10170
+usaf_id: 010010
+date: 20160109
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.4
+sea_lev: 10172
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160109
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.4
+sea_lev: 10169
+usaf_id: 010010
+date: 20160109
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.1
+sea_lev: 10172
+usaf_id: 010010
+date: 20160109
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.7
+sea_lev: 10172
+usaf_id: 010010
+date: 20160109
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.7
+sea_lev: 10171
+usaf_id: 010010
+date: 20160109
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.1
+sea_lev: 10169
+usaf_id: 010010
+date: 20160109
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.4
+sea_lev: 10170
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160109
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.8
+sea_lev: 10171
+usaf_id: 010010
+date: 20160109
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.6
+sea_lev: 10174
+usaf_id: 010010
+date: 20160109
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.7
+sea_lev: 10178
+usaf_id: 010010
+date: 20160109
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.2
+sea_lev: 10180
+usaf_id: 010010
+date: 20160109
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.2
+sea_lev: 10181
+usaf_id: 010010
+date: 20160109
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.6
+sea_lev: 10182
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160109
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.2
+sea_lev: 10182
+usaf_id: 010010
+date: 20160109
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.3
+sea_lev: 10182
+usaf_id: 010010
+date: 20160109
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.9
+sea_lev: 10182
+usaf_id: 010010
+date: 20160109
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.0
+sea_lev: 10180
+usaf_id: 010010
+date: 20160109
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.1
+sea_lev: 10182
+usaf_id: 010010
+date: 20160109
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.3
+sea_lev: 10184
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160109
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.6
+sea_lev: 10186
+usaf_id: 010010
+date: 20160109
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.8
+sea_lev: 10189
+usaf_id: 010010
+date: 20160109
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.0
+sea_lev: 10189
+usaf_id: 010010
+date: 20160109
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.1
+sea_lev: 10189
+usaf_id: 010010
+date: 20160109
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.2
+sea_lev: 10186
+usaf_id: 010010
+date: 20160110
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.2
+sea_lev: 10186
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160110
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.4
+sea_lev: 10185
+usaf_id: 010010
+date: 20160110
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.7
+sea_lev: 10182
+usaf_id: 010010
+date: 20160110
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.7
+sea_lev: 10177
+usaf_id: 010010
+date: 20160110
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.8
+sea_lev: 10175
+usaf_id: 010010
+date: 20160110
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.6
+sea_lev: 10172
+usaf_id: 010010
+date: 20160110
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.7
+sea_lev: 10171
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160110
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.6
+sea_lev: 10170
+usaf_id: 010010
+date: 20160110
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.4
+sea_lev: 10170
+usaf_id: 010010
+date: 20160110
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.1
+sea_lev: 10169
+usaf_id: 010010
+date: 20160110
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.2
+sea_lev: 10168
+usaf_id: 010010
+date: 20160110
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.1
+sea_lev: 10168
+usaf_id: 010010
+date: 20160110
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.1
+sea_lev: 10166
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160110
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.1
+sea_lev: 10164
+usaf_id: 010010
+date: 20160110
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.1
+sea_lev: 10163
+usaf_id: 010010
+date: 20160110
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.3
+sea_lev: 10163
+usaf_id: 010010
+date: 20160110
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.4
+sea_lev: 10159
+usaf_id: 010010
+date: 20160110
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.5
+sea_lev: 10157
+usaf_id: 010010
+date: 20160110
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.4
+sea_lev: 10155
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160110
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.5
+sea_lev: 10155
+usaf_id: 010010
+date: 20160110
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.7
+sea_lev: 10154
+usaf_id: 010010
+date: 20160110
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.4
+sea_lev: 10154
+usaf_id: 010010
+date: 20160110
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.5
+sea_lev: 10151
+usaf_id: 010010
+date: 20160110
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.6
+sea_lev: 10148
+usaf_id: 010010
+date: 20160111
+gmt: 0000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -5.7
+sea_lev: 10147
+prechrs: 06
+precdep: 
+usaf_id: 010010
+date: 20160111
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.8
+sea_lev: 10148
+usaf_id: 010010
+date: 20160111
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.9
+sea_lev: 10145
+usaf_id: 010010
+date: 20160111
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.1
+sea_lev: 10144
+usaf_id: 010010
+date: 20160111
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.9
+sea_lev: 10140
+usaf_id: 010010
+date: 20160111
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.2
+sea_lev: 10140
+usaf_id: 010010
+date: 20160111
+gmt: 0600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -6.0
+sea_lev: 10139
+usaf_id: 010010
+date: 20160111
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.2
+sea_lev: 10140
+usaf_id: 010010
+date: 20160111
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.5
+sea_lev: 10137
+usaf_id: 010010
+date: 20160111
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.2
+sea_lev: 10138
+usaf_id: 010010
+date: 20160111
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.8
+sea_lev: 10138
+usaf_id: 010010
+date: 20160111
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.4
+sea_lev: 10137
+usaf_id: 010010
+date: 20160111
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.9
+sea_lev: 10135
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160111
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.6
+sea_lev: 10137
+usaf_id: 010010
+date: 20160111
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.6
+sea_lev: 10138
+usaf_id: 010010
+date: 20160111
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10139
+usaf_id: 010010
+date: 20160111
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.1
+sea_lev: 10138
+usaf_id: 010010
+date: 20160111
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.5
+sea_lev: 10140
+usaf_id: 010010
+date: 20160111
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.2
+sea_lev: 10140
+prechrs: 
+precdep: 
+usaf_id: 010010
+date: 20160111
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10142
+usaf_id: 010010
+date: 20160111
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.8
+sea_lev: 10144
+usaf_id: 010010
+date: 20160111
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.7
+sea_lev: 10146
+usaf_id: 010010
+date: 20160111
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.1
+sea_lev: 10145
+usaf_id: 010010
+date: 20160111
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.3
+sea_lev: 10148
+usaf_id: 010010
+date: 20160112
+gmt: 0000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.7
+sea_lev: 10155
+usaf_id: 010010
+date: 20160112
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.7
+sea_lev: 10157
+usaf_id: 010010
+date: 20160112
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.5
+sea_lev: 10165
+usaf_id: 010010
+date: 20160112
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.5
+sea_lev: 10164
+usaf_id: 010010
+date: 20160112
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.7
+sea_lev: 10165
+usaf_id: 010010
+date: 20160112
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.5
+sea_lev: 10164
+usaf_id: 010010
+date: 20160112
+gmt: 0600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.5
+sea_lev: 10165
+prechrs: 12
+precdep: 0.6
+usaf_id: 010010
+date: 20160112
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.4
+sea_lev: 10165
+usaf_id: 010010
+date: 20160112
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.5
+sea_lev: 10172
+usaf_id: 010010
+date: 20160112
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.5
+sea_lev: 10180
+usaf_id: 010010
+date: 20160112
+gmt: 1000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 0.4
+sea_lev: 10185
+usaf_id: 010010
+date: 20160112
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.7
+sea_lev: 10190
+usaf_id: 010010
+date: 20160112
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.2
+sea_lev: 10195
+prechrs: 06
+precdep: 0.4
+usaf_id: 010010
+date: 20160112
+gmt: 1300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.2
+sea_lev: 10200
+usaf_id: 010010
+date: 20160112
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.3
+sea_lev: 10203
+usaf_id: 010010
+date: 20160112
+gmt: 1500
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.4
+sea_lev: 10208
+usaf_id: 010010
+date: 20160112
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.1
+sea_lev: 10214
+usaf_id: 010010
+date: 20160112
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.7
+sea_lev: 10218
+usaf_id: 010010
+date: 20160112
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.7
+sea_lev: 10220
+prechrs: 12
+precdep: 0.4
+usaf_id: 010010
+date: 20160112
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.4
+sea_lev: 10222
+usaf_id: 010010
+date: 20160112
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.2
+sea_lev: 10221
+usaf_id: 010010
+date: 20160112
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.3
+sea_lev: 10224
+usaf_id: 010010
+date: 20160112
+gmt: 2200
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 0.0
+sea_lev: 10225
+usaf_id: 010010
+date: 20160112
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.0
+sea_lev: 10224
+usaf_id: 010010
+date: 20160113
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.1
+sea_lev: 10224
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160113
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.1
+sea_lev: 10224
+usaf_id: 010010
+date: 20160113
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.2
+sea_lev: 10223
+usaf_id: 010010
+date: 20160113
+gmt: 0300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.2
+sea_lev: 10220
+usaf_id: 010010
+date: 20160113
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.3
+sea_lev: 10220
+usaf_id: 010010
+date: 20160113
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: 0.1
+sea_lev: 10215
+usaf_id: 010010
+date: 20160113
+gmt: 0600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 0.0
+sea_lev: 10217
+prechrs: 12
+precdep: 
+usaf_id: 010010
+date: 20160113
+gmt: 0700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 0.0
+sea_lev: 10214
+usaf_id: 010010
+date: 20160113
+gmt: 0800
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: 0.0
+sea_lev: 10212
+usaf_id: 010010
+date: 20160113
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.8
+sea_lev: 10217
+usaf_id: 010010
+date: 20160113
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.9
+sea_lev: 10218
+usaf_id: 010010
+date: 20160113
+gmt: 1100
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -1.0
+sea_lev: 10218
+usaf_id: 010010
+date: 20160113
+gmt: 1200
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.7
+sea_lev: 10218
+prechrs: 06
+precdep: 
+usaf_id: 010010
+date: 20160113
+gmt: 1300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.7
+sea_lev: 10216
+usaf_id: 010010
+date: 20160113
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.3
+sea_lev: 10215
+usaf_id: 010010
+date: 20160113
+gmt: 1500
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -0.4
+sea_lev: 10219
+usaf_id: 010010
+date: 20160113
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.2
+sea_lev: 10221
+usaf_id: 010010
+date: 20160113
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10218
+usaf_id: 010010
+date: 20160113
+gmt: 1800
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -1.2
+sea_lev: 10224
+prechrs: 12
+precdep: 
+usaf_id: 010010
+date: 20160113
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10226
+usaf_id: 010010
+date: 20160113
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.4
+sea_lev: 10225
+usaf_id: 010010
+date: 20160113
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10226
+usaf_id: 010010
+date: 20160113
+gmt: 2200
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -3.7
+sea_lev: 10228
+usaf_id: 010010
+date: 20160113
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.5
+sea_lev: 10230
+usaf_id: 010010
+date: 20160114
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.1
+sea_lev: 10232
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160114
+gmt: 0100
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.7
+sea_lev: 10231
+usaf_id: 010010
+date: 20160114
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.1
+sea_lev: 10231
+usaf_id: 010010
+date: 20160114
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10229
+usaf_id: 010010
+date: 20160114
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.1
+sea_lev: 10229
+usaf_id: 010010
+date: 20160114
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.3
+sea_lev: 10228
+usaf_id: 010010
+date: 20160114
+gmt: 0600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.7
+sea_lev: 10226
+prechrs: 12
+precdep: 
+usaf_id: 010010
+date: 20160114
+gmt: 0700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.2
+sea_lev: 10225
+usaf_id: 010010
+date: 20160114
+gmt: 0800
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.9
+sea_lev: 10224
+usaf_id: 010010
+date: 20160114
+gmt: 0900
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.4
+sea_lev: 10226
+usaf_id: 010010
+date: 20160114
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.4
+sea_lev: 10229
+usaf_id: 010010
+date: 20160114
+gmt: 1100
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.7
+sea_lev: 10226
+usaf_id: 010010
+date: 20160114
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.0
+sea_lev: 10224
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160114
+gmt: 1300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.7
+sea_lev: 10223
+usaf_id: 010010
+date: 20160114
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10223
+usaf_id: 010010
+date: 20160114
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10224
+usaf_id: 010010
+date: 20160114
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.5
+sea_lev: 10223
+usaf_id: 010010
+date: 20160114
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10224
+usaf_id: 010010
+date: 20160114
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.5
+sea_lev: 10226
+prechrs: 12
+precdep: 0.1
+usaf_id: 010010
+date: 20160114
+gmt: 1900
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.7
+sea_lev: 10226
+usaf_id: 010010
+date: 20160114
+gmt: 2000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -2.9
+sea_lev: 10228
+usaf_id: 010010
+date: 20160114
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.2
+sea_lev: 10230
+usaf_id: 010010
+date: 20160114
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.4
+sea_lev: 10231
+usaf_id: 010010
+date: 20160114
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.3
+sea_lev: 10229
+usaf_id: 010010
+date: 20160115
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -4.0
+sea_lev: 10226
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160115
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.8
+sea_lev: 10225
+usaf_id: 010010
+date: 20160115
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10223
+usaf_id: 010010
+date: 20160115
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.6
+sea_lev: 10222
+usaf_id: 010010
+date: 20160115
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.1
+sea_lev: 10220
+usaf_id: 010010
+date: 20160115
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.9
+sea_lev: 10216
+usaf_id: 010010
+date: 20160115
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10214
+prechrs: 12
+precdep: 0.5
+usaf_id: 010010
+date: 20160115
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10213
+usaf_id: 010010
+date: 20160115
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.8
+sea_lev: 10214
+usaf_id: 010010
+date: 20160115
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10215
+usaf_id: 010010
+date: 20160115
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.9
+sea_lev: 10215
+usaf_id: 010010
+date: 20160115
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.8
+sea_lev: 10210
+usaf_id: 010010
+date: 20160115
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.3
+sea_lev: 10206
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160115
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.5
+sea_lev: 10202
+usaf_id: 010010
+date: 20160115
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.3
+sea_lev: 10201
+usaf_id: 010010
+date: 20160115
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10199
+usaf_id: 010010
+date: 20160115
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10200
+usaf_id: 010010
+date: 20160115
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10198
+usaf_id: 010010
+date: 20160115
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.6
+sea_lev: 10196
+prechrs: 12
+precdep: 0.8
+usaf_id: 010010
+date: 20160115
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10194
+usaf_id: 010010
+date: 20160115
+gmt: 2000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -1.0
+sea_lev: 10196
+usaf_id: 010010
+date: 20160115
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.0
+sea_lev: 10196
+usaf_id: 010010
+date: 20160115
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.3
+sea_lev: 10195
+usaf_id: 010010
+date: 20160115
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.1
+sea_lev: 10192
+usaf_id: 010010
+date: 20160116
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -0.8
+sea_lev: 10188
+prechrs: 06
+precdep: 0.7
+usaf_id: 010010
+date: 20160116
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.7
+sea_lev: 10181
+usaf_id: 010010
+date: 20160116
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.8
+sea_lev: 10181
+usaf_id: 010010
+date: 20160116
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.7
+sea_lev: 10174
+usaf_id: 010010
+date: 20160116
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.5
+sea_lev: 10170
+usaf_id: 010010
+date: 20160116
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.5
+sea_lev: 10168
+usaf_id: 010010
+date: 20160116
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -1.8
+sea_lev: 10166
+prechrs: 12
+precdep: 0.7
+usaf_id: 010010
+date: 20160116
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.2
+sea_lev: 10168
+usaf_id: 010010
+date: 20160116
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -2.7
+sea_lev: 10171
+usaf_id: 010010
+date: 20160116
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.2
+sea_lev: 10174
+usaf_id: 010010
+date: 20160116
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -3.2
+sea_lev: 10180
+usaf_id: 010010
+date: 20160116
+gmt: 1100
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -3.7
+sea_lev: 10183
+usaf_id: 010010
+date: 20160116
+gmt: 1200
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -4.5
+sea_lev: 10190
+prechrs: 06
+precdep: 
+usaf_id: 010010
+date: 20160116
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.3
+sea_lev: 10194
+usaf_id: 010010
+date: 20160116
+gmt: 1400
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -6.0
+sea_lev: 10200
+usaf_id: 010010
+date: 20160116
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.7
+sea_lev: 10203
+usaf_id: 010010
+date: 20160116
+gmt: 1600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.2
+sea_lev: 10206
+usaf_id: 010010
+date: 20160116
+gmt: 1700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.0
+sea_lev: 10209
+usaf_id: 010010
+date: 20160116
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.9
+sea_lev: 10214
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160116
+gmt: 1900
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -6.5
+sea_lev: 10220
+usaf_id: 010010
+date: 20160116
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.6
+sea_lev: 10225
+usaf_id: 010010
+date: 20160116
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.9
+sea_lev: 10228
+usaf_id: 010010
+date: 20160116
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.5
+sea_lev: 10230
+usaf_id: 010010
+date: 20160116
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.6
+sea_lev: 10239
+usaf_id: 010010
+date: 20160117
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -5.9
+sea_lev: 10241
+prechrs: 06
+precdep: 0.1
+usaf_id: 010010
+date: 20160117
+gmt: 0100
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -6.2
+sea_lev: 10245
+usaf_id: 010010
+date: 20160117
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.1
+sea_lev: 10250
+usaf_id: 010010
+date: 20160117
+gmt: 0300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -6.7
+sea_lev: 10255
+usaf_id: 010010
+date: 20160117
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.0
+sea_lev: 10255
+usaf_id: 010010
+date: 20160117
+gmt: 0500
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.5
+sea_lev: 10256
+usaf_id: 010010
+date: 20160117
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.7
+sea_lev: 10258
+prechrs: 12
+precdep: 0.1
+usaf_id: 010010
+date: 20160117
+gmt: 0700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.8
+sea_lev: 10258
+usaf_id: 010010
+date: 20160117
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.7
+sea_lev: 10259
+usaf_id: 010010
+date: 20160117
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.8
+sea_lev: 10260
+usaf_id: 010010
+date: 20160117
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.9
+sea_lev: 10260
+usaf_id: 010010
+date: 20160117
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.2
+sea_lev: 10259
+usaf_id: 010010
+date: 20160117
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.3
+sea_lev: 10255
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160117
+gmt: 1300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.4
+sea_lev: 10253
+usaf_id: 010010
+date: 20160117
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.3
+sea_lev: 10251
+usaf_id: 010010
+date: 20160117
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.1
+sea_lev: 10250
+usaf_id: 010010
+date: 20160117
+gmt: 1600
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -8.2
+sea_lev: 10249
+usaf_id: 010010
+date: 20160117
+gmt: 1700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -8.0
+sea_lev: 10244
+usaf_id: 010010
+date: 20160117
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.0
+sea_lev: 10243
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160117
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.0
+sea_lev: 10246
+usaf_id: 010010
+date: 20160117
+gmt: 2000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.7
+sea_lev: 10244
+usaf_id: 010010
+date: 20160117
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.8
+sea_lev: 10242
+usaf_id: 010010
+date: 20160117
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.8
+sea_lev: 10240
+usaf_id: 010010
+date: 20160117
+gmt: 2300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.7
+sea_lev: 10237
+usaf_id: 010010
+date: 20160118
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.7
+sea_lev: 10236
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160118
+gmt: 0100
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.7
+sea_lev: 10235
+usaf_id: 010010
+date: 20160118
+gmt: 0200
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.5
+sea_lev: 10230
+usaf_id: 010010
+date: 20160118
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.6
+sea_lev: 10228
+usaf_id: 010010
+date: 20160118
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.6
+sea_lev: 10221
+usaf_id: 010010
+date: 20160118
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.6
+sea_lev: 10217
+usaf_id: 010010
+date: 20160118
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.5
+sea_lev: 10217
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160118
+gmt: 0700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.7
+sea_lev: 10213
+usaf_id: 010010
+date: 20160118
+gmt: 0800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.5
+sea_lev: 10215
+usaf_id: 010010
+date: 20160118
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.5
+sea_lev: 10215
+usaf_id: 010010
+date: 20160118
+gmt: 1000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.3
+sea_lev: 10212
+usaf_id: 010010
+date: 20160118
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.6
+sea_lev: 10206
+usaf_id: 010010
+date: 20160118
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.1
+sea_lev: 10209
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160118
+gmt: 1300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.0
+sea_lev: 10207
+usaf_id: 010010
+date: 20160118
+gmt: 1400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.9
+sea_lev: 10204
+usaf_id: 010010
+date: 20160118
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.8
+sea_lev: 10199
+usaf_id: 010010
+date: 20160118
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.5
+sea_lev: 10198
+usaf_id: 010010
+date: 20160118
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.4
+sea_lev: 10197
+usaf_id: 010010
+date: 20160118
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.4
+sea_lev: 10193
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160118
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.6
+sea_lev: 10194
+usaf_id: 010010
+date: 20160118
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.8
+sea_lev: 10194
+usaf_id: 010010
+date: 20160118
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -6.9
+sea_lev: 10192
+usaf_id: 010010
+date: 20160118
+gmt: 2200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.2
+sea_lev: 10191
+usaf_id: 010010
+date: 20160118
+gmt: 2300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.7
+sea_lev: 10189
+usaf_id: 010010
+date: 20160119
+gmt: 0000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.1
+sea_lev: 10184
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160119
+gmt: 0100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.0
+sea_lev: 10189
+usaf_id: 010010
+date: 20160119
+gmt: 0200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.0
+sea_lev: 10188
+usaf_id: 010010
+date: 20160119
+gmt: 0300
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.0
+sea_lev: 10187
+usaf_id: 010010
+date: 20160119
+gmt: 0400
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.1
+sea_lev: 10185
+usaf_id: 010010
+date: 20160119
+gmt: 0500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.2
+sea_lev: 10186
+usaf_id: 010010
+date: 20160119
+gmt: 0600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -8.2
+sea_lev: 10186
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160119
+gmt: 0700
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.9
+sea_lev: 10190
+usaf_id: 010010
+date: 20160119
+gmt: 0800
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.7
+sea_lev: 10190
+usaf_id: 010010
+date: 20160119
+gmt: 0900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.5
+sea_lev: 10192
+usaf_id: 010010
+date: 20160119
+gmt: 1000
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.5
+sea_lev: 10192
+usaf_id: 010010
+date: 20160119
+gmt: 1100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.1
+sea_lev: 10194
+usaf_id: 010010
+date: 20160119
+gmt: 1200
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.4
+sea_lev: 10196
+prechrs: 06
+precdep: 0.0
+usaf_id: 010010
+date: 20160119
+gmt: 1300
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.2
+sea_lev: 10197
+usaf_id: 010010
+date: 20160119
+gmt: 1400
+data source: 4
+lat: 70.939
+long: -8.669
+elev: +0010
+air_temp: -7.2
+sea_lev: 10198
+usaf_id: 010010
+date: 20160119
+gmt: 1500
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.4
+sea_lev: 10197
+usaf_id: 010010
+date: 20160119
+gmt: 1600
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.3
+sea_lev: 10197
+usaf_id: 010010
+date: 20160119
+gmt: 1700
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.2
+sea_lev: 10196
+usaf_id: 010010
+date: 20160119
+gmt: 1800
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.2
+sea_lev: 10197
+prechrs: 12
+precdep: 0.0
+usaf_id: 010010
+date: 20160119
+gmt: 1900
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.6
+sea_lev: 10199
+usaf_id: 010010
+date: 20160119
+gmt: 2000
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.5
+sea_lev: 10200
+usaf_id: 010010
+date: 20160119
+gmt: 2100
+data source: 4
+lat: 70.933
+long: -8.667
+elev: +0009
+air_temp: -7.7
+sea_lev: 10196
