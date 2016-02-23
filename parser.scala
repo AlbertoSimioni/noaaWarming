@@ -82,10 +82,11 @@ def parseLine(line: String): Map[String, String] = {
       var precdep = (additionalFields.substring(aa1pos+5, aa1pos+9))
       if(precdep != "9999"){
          precdep = (precdep.toInt/10.0).toString
-       }
+      }
       else precdep = "";
-      empty.updated("prechrs",prechrs)
-      empty.updated("precdep",precdep)
+      //liquid precipitations
+      empty.updated("prechrs",prechrs) //MIN: 00 MAX: 98 UNITS: Hours (measured hours)
+      empty.updated("precdep",precdep) //MIN: 0000 MAX: 9998 UNITS: millimeters
       output.appendAll("prechrs" + ": "+ prechrs +"\n")
       output.appendAll("precdep" + ": "+ precdep +"\n")
   }
