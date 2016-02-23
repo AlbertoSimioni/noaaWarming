@@ -3,9 +3,7 @@ var tempList = Seq()
 
 val filename = "010010-99999-2016"
 val lines = Source.fromFile(filename).getLines().to[Seq]
-    //println(line.takeRight(5))
-    //println(line.dropRight(line.length - 5))
-    //println(lines.map(parseLine))
+
 lines.map(parseLine)
 
   /**
@@ -36,9 +34,9 @@ def parseLine(line: String): Map[String, String] = {
     Field(57, 60, 4, "precip 6h", "Precipitation 6-Hour (mm)"), //quality control process name
     Field(61, 63, 3, "wind_dir", "Wind Direction"), //MIN: 001 MAX: 360 UNITS: starting from true north
     Field(64, 64, 1, "wind dir flag", "Wind Direction Flag"), //direction quality code
-    Field(65, 65, 1, "wind type", "Wind Type"), //Descriptor of the wind
-    Field(66, 69, 4, "wind speed", "Wind Speed"), //MIN: 0000 MAX: 0900 UNITS: meters per second
-    Field(70, 70, 1, "wind speed flag", "Wind Speed Flag"), //quality
+    Field(65, 65, 1, "wind_type", "Wind Type"), //Descriptor of the wind
+    Field(66, 69, 4, "wind_speed", "Wind Speed"), //MIN: 0000 MAX: 0900 UNITS: meters per second
+    Field(70, 70, 1, "wind_speed_flag", "Wind Speed Flag"), //quality
     Field(71, 75, 5, "sky_ceiling", "Sky Ceiling"),//MIN: 00000 MAX: 22000 UNITS: Meters
     Field(76, 76, 1, "sky_ceiling_flag", "Sky Ceiling Flag"), //quality
     Field(77, 77, 1, "sky_ceiling_determ", "Sky Ceiling Determ"),//how was determined the ceiling
@@ -58,37 +56,40 @@ def parseLine(line: String): Map[String, String] = {
   val output = scala.tools.nsc.io.File("output.txt");
   if (line.length >= 61) {
     fields.foldLeft(empty) { (m, f) =>
-      val value = line.substring(f.start - 1, f.end).trim
-      val recoded = if (value == "-9999") "" else value
-      if (f.name =="air_temp"){
-        val sign=line.substring(f.start - 1, f.start).trim
-        val temp=line.substring(f.start, f.end).trim.toInt
-        output.appendAll(f.name + ": "+ sign + " " + temp + "\n" );
-      //println(sign + " " + temp)
+      var fieldValue = line.substring(f.start - 1, f.end).trim
+      //val recoded = if (value == "-9999") "" else value // what is this line for?
+      if (f.name =="air_temp" || f.name ==  "wind_speed"){
+          if(fieldValue != "9999"){
+              fieldValue=((fieldValue.toInt)/10.0).toString
+          }
+          else fieldValue = ""
+      }
+
+      if (f.name == "lat" || f.name == "long") fieldValue=((fieldValue.toInt)/1000.0).toString
+
+      output.appendAll(f.name + ": "+ fieldValue +"\n")
+
+      m.updated(f.name, fieldValue)
     }
-      output.appendAll(f.name + ": "+ value +"\n")
-      m.updated(f.name, recoded)
-    }
-  } else {
-    empty
   }
-
-  // def stringToTemp(value:String): Temperature={
-  //   return new Temperature()
-  // }
+  var additionalFields = line.substring(108)
+  val aa1pos = additionalFields.indexOf("AA1",0)
+  if(aa1pos != -1 ){
+      var prechrs = additionalFields.substring(aa1pos+3, aa1pos+5)
+      if(prechrs == "99"){
+        prechrs = ""
+      }
+      var precdep = (additionalFields.substring(aa1pos+5, aa1pos+9))
+      if(precdep != "9999"){
+         precdep = (precdep.toInt/10.0).toString
+       }
+      else precdep = "";
+      empty.updated("prechrs",prechrs)
+      empty.updated("precdep",precdep)
+      output.appendAll("prechrs" + ": "+ prechrs +"\n")
+      output.appendAll("precdep" + ": "+ precdep +"\n")
+  }
+  empty;
 }
-
-
-
-
-
-  //   class Temperature{
-  //    public String sign
-  //    public Int temp
-  //   public Temperature(String s, Int v){
-  //   sign=s
-  //   temp=v
-  // }
-//}
 
 
