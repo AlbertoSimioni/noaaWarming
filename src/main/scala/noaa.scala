@@ -10,7 +10,7 @@ import java.util.zip.{ ZipEntry, ZipInputStream }
 object WeatherApp {
   def main(args: Array[String]) {
 
-    val wheatherFile = "hdfs://hathi-surfsara:8020/user/lsde06/1901" // Should be some file on your system
+    val wheatherFile = "hdfs://hathi-surfsara:8020/user/lsde06/1983" // Should be some file on your system
     val conf = new SparkConf().setAppName("Global Warming Analyzer")
     val sc = new SparkContext(conf)
     val lines = sc.textFile(wheatherFile)
@@ -122,6 +122,17 @@ object WeatherApp {
       valueMap += ("precdep" -> precdep)
     }
     //valueMap
+  }
+
+  
+
+  def avgTemp(line:String): Double= {
+    val tmp = line.substring(88 - 1, 92).trim
+    if (tmp == "9999") {
+         Double.MaxValue
+      } else {
+        ((tmp.toInt) / 10.0)
+      }
   }
 
   def writeCsvLine(fieldsMaps: Seq[scala.collection.mutable.Map[String, String]], outputFile: scala.tools.nsc.io.File) {
