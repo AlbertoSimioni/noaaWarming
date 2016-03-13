@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Googlemaps Heatmap Layer</title>
+    <style>
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0; font-family:sans-serif; }
+      #map-canvas { height: 100% }
+      h1 { position:absolute; background:black; color:white; padding:10px; font-weight:200; z-index:10000;}
+      #all-examples-info { position:absolute; background:white; font-size:16px; padding:20px; bottom:20px; width:350px; line-height:150%; border:1px solid rgba(0,0,0,.2);}
+    </style>
+
+  
+
+  </head>
+  <body>
+      <div id="floating-panel">
+      <button onclick="changeGradient()">Change gradient</button>
+    </div>
+    <div id="map-canvas"></div>
+<div id="coords"></div>
+    <div id="map"></div>
+    <script>
+
+      // This example requires the Visualization library. Include the libraries=visualization
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+
+var map, heatmap;
+
+function initMap()
+{
+
+    // standard map
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        {
+            zoom : 0,
+            center :
+            {
+                lat : 10,
+                lng : 0.0
+            },
+            zoomControl : true,
+            mapTypeControl : false,
+            scaleControl : true,
+            streetViewControl : false,
+            rotateControl : false,
+            fullscreenControl : true,
+        }
+        );
+    initGallPeters();
+    map.mapTypes.set('gallPeters', gallPetersMapType);
+    map.setMapTypeId('gallPeters');
+
+    // Show the lat and lng under the mouse cursor.
+    var coordsDiv = document.getElementById('coords');
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(coordsDiv);
+    map.addListener('mousemove', function (event)
+    {
+        coordsDiv.textContent =
+            'lat: ' + Math.round(event.latLng.lat()) + ', ' +
+            'lng: ' + Math.round(event.latLng.lng());
+    }
+    );
+
+    // heatmap layer
+    heatmap = new HeatmapOverlay(map,
+        {
+            // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+            "radius" : 6,
+            "maxOpacity" : 100,
+            // scales the radius based on map zoom
+            "scaleRadius" : true,
+            // if set to false the heatmap uses the global maximum for colorization
+            // if activated: uses the data maximum within the current map boundaries
+            //   (there will always be a red spot with useLocalExtremas true)
+            "useLocalExtrema" : false,
+            // which field name in your data represents the latitude - default "lat"
+            latField : 'lat',
+            // which field name in your data represents the longitude - default "lng"
+            lngField : 'lng',
+            // which field name in your data represents the data value - default "value"
+            valueField : 'value'
+        }
+        );
+
+
+    // map.set('maxIntensity', 12000);
+    // map.set('dissipating', false);
+}
+
+map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 3
+  });
+
+      function toggleHeatmap() {
+        heatmap.setMap(heatmap.getMap() ? null : map);
+      }
+
+</script>
+
+    <script type="text/javascript" src="noaa.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdyR9_xzX2Aobku8sATB4fXIDQZnz4bgM&libraries=visualization&callback=initMap">
+    </script>
+    
+
+
+       
+  </body>
+</html>
