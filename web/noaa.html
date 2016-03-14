@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <title>Googlemaps Heatmap Layer</title>
-    <style>
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0; font-family:sans-serif; }
-      #map-canvas { height: 100% }
-      h1 { position:absolute; background:black; color:white; padding:10px; font-weight:200; z-index:10000;}
-      #all-examples-info { position:absolute; background:white; font-size:16px; padding:20px; bottom:20px; width:350px; line-height:150%; border:1px solid rgba(0,0,0,.2);}
-    </style>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>NOAA</title>
   
+    <link href="css/style.css" rel="stylesheet">
 
+      <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/heatmap.js"></script>
+    <script src="js/gmaps-heatmap.js"></script>
+    <script src="js/gallPeters.js"></script>
+    <script src="js/getData.js"></script>
+  
   </head>
   <body>
-      <div id="floating-panel">
-      <button onclick="changeGradient()">Change gradient</button>
+
+
+
+      <div id="coords"></div>
+      <div id="map-canvas">
     </div>
-    <div id="map-canvas"></div>
-<div id="coords"></div>
-    <div id="map"></div>
+
     <script>
 
-      // This example requires the Visualization library. Include the libraries=visualization
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
-
-var map, heatmap;
-
-function initMap()
-{
-
-    // standard map
+ // standard map
     map = new google.maps.Map(document.getElementById('map-canvas'),
         {
-            zoom : 0,
+            zoom : 1,
             center :
             {
                 lat : 10,
@@ -50,6 +49,7 @@ function initMap()
             fullscreenControl : true,
         }
         );
+    
     initGallPeters();
     map.mapTypes.set('gallPeters', gallPetersMapType);
     map.setMapTypeId('gallPeters');
@@ -69,8 +69,8 @@ function initMap()
     heatmap = new HeatmapOverlay(map,
         {
             // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-            "radius" : 6,
-            "maxOpacity" : 100,
+            "radius" : 3,
+            //"maxOpacity" : 100,
             // scales the radius based on map zoom
             "scaleRadius" : true,
             // if set to false the heatmap uses the global maximum for colorization
@@ -82,33 +82,29 @@ function initMap()
             // which field name in your data represents the longitude - default "lng"
             lngField : 'lng',
             // which field name in your data represents the data value - default "value"
-            valueField : 'value'
+            valueField : 'temp'
         }
         );
-
-
-    // map.set('maxIntensity', 12000);
-    // map.set('dissipating', false);
-}
-
-map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 3
-  });
-
-      function toggleHeatmap() {
+function toggleHeatmap() {
         heatmap.setMap(heatmap.getMap() ? null : map);
       }
+      function insertData(data){
+          heatmap.setData(data);
+          toggleHeatmap();
+      }
+    // map.set('maxIntensity', 12000);
+    // map.set('dissipating', false);
 
+
+        $(document).ready(function(){
+          toggleHeatmap();
+        getData("2010", "2000");
+});
+        
 </script>
 
-    <script type="text/javascript" src="noaa.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdyR9_xzX2Aobku8sATB4fXIDQZnz4bgM&libraries=visualization&callback=initMap">
-    </script>
-    
 
 
-       
+  
   </body>
 </html>
