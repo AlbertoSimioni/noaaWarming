@@ -1,4 +1,4 @@
-
+/*
 object dataFields {
   val idPos = List(5, 10)
   val datePos = List(16, 23)
@@ -18,7 +18,7 @@ class StationData(
   val precdep: Double) extends Serializable {
   override def toString(): String = id + "," + date.toString + "," + latitude + "," + longitude + "," + temperature + "," + prechrs + "," + precdep
 
- 
+
 }
 
  def maxTemp(x: StationData, y: StationData): StationData = {
@@ -62,7 +62,7 @@ def parseLine(line: String): (StationData) = {
     var longD = ((long.toInt) / 1000.0)
 
     var temp = line.substring(dataFields.tempPos(0) - 1, dataFields.tempPos(1)).trim
-    var tempD = 999.9 
+    var tempD = 999.9
 
     if (temp != "9999") {
       tempD = ((temp.toDouble) / 10.0)
@@ -74,7 +74,7 @@ def parseLine(line: String): (StationData) = {
     if (line.length > 108) {
       var additionalFields = line.substring(108)
       val aa1pos = additionalFields.indexOf("AA1", 0)
-      
+
       if (aa1pos != -1 && line.length >= aa1pos + 9) {
         prechrs = additionalFields.substring(aa1pos + 3, aa1pos + 5).toInt
         if (prechrs == 99) {
@@ -119,7 +119,7 @@ val filtered=data.filter(filterTemp)
 val indexFilteredByTemp=filtered.map(data => (data.id, data))
 
 
-// avgs
+// map reduce to calculate the avarage temperature of each station
 val sums=filtered.map(c=>(1,c.temperature)).reduce((v1,v2)=>(v1._1+v2._1, v1._2+v2._2))
 sums._2/sums._1
 
@@ -138,22 +138,22 @@ val world_avg = region_avgs.map( data => data._2).reduce((a,b)=>a+b) / region_co
 //find max temperatures
 val maxTemperature = indexed.reduceByKey(maxTemp)
 
-// isolate temperatures 
+// isolate temperatures
 val temps = indexFilteredByTemp.map { case (k, v) => (k, (1, v.temperature)) }
 val avgTemps = temps.reduceByKey { case ((c1, s1), (c2, s2)) => (c1 + c2, s1 + s2) }.map { case (k, (count, sum)) => (k, sum / count) }
 
 
 
 // For the median
- val sorted = filtered.sortBy( c=>c.temperature).zipWithIndex().map {
+val sorted = filtered.sortBy( c=>c.temperature).zipWithIndex().map {
     case (v, idx) => (idx, v)
   }
 
-  val count = sorted.count()
+val count = sorted.count()
 
-  val median: Double = if (count % 2 == 0) {
+val median: Double = if (count % 2 == 0) {
     val l = count / 2 - 1
     val r = l + 1
     (sorted.lookup(l).head.temperature + sorted.lookup(r).head.temperature).toDouble / 2
   } else sorted.lookup(count / 2).head.temperature.toDouble
-
+*/
