@@ -6,6 +6,7 @@
 
 \documentclass{vldb}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
 
 
@@ -13,7 +14,7 @@
 
 % ****************** TITLE ****************************************
 
-\title{Global Warming Data Analysis}
+\title{Global Warming Distributed Data Analysis}
 
 % possible, but not really needed or used for PVLDB:
 %\subtitle{[Extended Abstract]
@@ -75,23 +76,63 @@
 \maketitle
 
 \begin{abstract}
-Global warming is an open topic of discussion today. While climate scientist debate on the causes of the gradual temperature rise in the past 50 years (the majority claim the increase of CO2 due to fossil fuel is to blame, other researchers found alternative explanations, like non CO2 greenhouse gases (GHGs) \cite{hansen2000global}). Whatever the causes, the data collected by different organizations and from different parts of the world all agree that the global temperature in the world is rising \cite{hansen2006global}. We show that this trend is not only real, but the temperature increase is accelerating in the last twenty years at a worrisome rate. Moreover, we created and interactive tool that may help researchers to visualize the enormous amount of climate data that was collected in the past century and detect possible global warming causes and effects.
+
 
 \end{abstract}
 
-
-
-
 \section{Introduction}
+Global warming is an open topic of discussion today. While climate scientist debate on the causes of the gradual temperature rise in the past 50 years (the majority claim the increase of CO2 due to fossil fuel is to blame, other researchers found alternative explanations, like non CO2 greenhouse gases (GHGs) \cite{hansen2000global}). Whatever the causes, the data collected by different organizations and from different parts of the world all agree that the global temperature in the world is rising \cite{hansen2006global}. We show that this trend is not only real, but the temperature increase is accelerating in the last twenty years at a worrisome rate. Moreover, we created and interactive tool that may help researchers to visualize the enormous amount of climate data that was collected in the past century and detect possible global warming causes and effects.
+
+\subsection{Data Sources}
+We have access to more than one hundred years of weather data provided by the NOAA (National Oceanic and Atmospheric Administration) organization. The raw data is publicly accessible\footnote{\hyperref{ftp://ftp.ncdc.noaa.gov/pub/data/noaa/}} so anyone interested in analyzing the climate of the past years can use them. The data is organized by year and grouped by ISD (Integrated Surface Data) stations. They also provide a \texttt{perl} script that helps in reading and viewing the data. NOAA also publishes monthly reports on the climate status (like temperature, precipitation, sea level) and compares the data obtained for the last month/year to the averages calculated in the past, accompanied by a software suite to repeat or modify the analysis at home. While this tools and datasets are helpful, there are currently no publicly available tools to perform custom data analysis on the whole raw dataset available. In particular, considering the size of the uncompressed data (~200 GB) it may be necessary to use a cluster to make complex computations that require more time. 
+
+\subsection{Our Contribution}
+Our aim is to update the recent work done in the climate analysis with the new data available. Moreover, differently than other studies, we will perform the analysis in a cluster and study a way to improve the analysis performance in this type of environment. In the end, we will compare the results we obtained with the ones available in the literature and evaluate the state of global warming in the recent years.\\
+
+In the following sections we first describe the context of our work and the related literature in section \ref{sec:rel}, then we explain how we implemented the data analysis in section \ref{sec:pro}, in section \ref{sec:res} we show the results we obtained and discuss them, and finally in section \ref{sec:con} we argue the relevance of our results and future improvements.
 
 
-\section{Design}
+\section{Related Work}
+\label{sec:rel}
+Studies on global and regional surface temperature change has been done in past. Researchers showed that the rate of temperature increase has been higher in the last quarter of the century that it has been in the previous years of the 20\^{th} century. Moreover they calculated an increase in the average global five year mean of about 1°C\cite{hansen1999giss}. This recent trend is particularly important if we consider the temperature changes in the past millennium, and can be considered an unprecedented anomaly\cite{mann1999northern}. More recent studies also show that the mean annual temperature has not risen in the last twenty years, despite the continuous increase of GHGs in the atmosphere\cite{kosaka2013recent}. This suggests that either the global warming phenomenon that was registered in the period 1975-2000 had different causes or that the more recent stable trend has an origin that balance the greenhouse effects.
+
+\section{Research Question}
 
 
-\section{Results}
+
+\section{Project setup}
+\label{sec:pro}
+In this section we explain in more detail how we performed the analysis, what tools we used and the preliminary work on the data before the analysis. 
+
+
+\subsection{Data Format}
+The public NOAA data repository contains a file for each station for each year. The name of each file is \{USAF code\}\-\{WBAN code\}-\{year\}, where USAF is the Air Force Station ID and the WBAN is the NCDC (National Climate Data Center) station number. The number of station for each year is shown in figure \ref{fig:stations}. As we can see the number of stations has steadily increased during the years. More importantly, we have to be aware of the results we obtain analyzing years where the number of stations is very low. Since the distribution of the station around the world is not uniform and they don't cover every area, it's difficult to obtain correct results on the global scale. What we can do is to consider the fluctuation of data for the same station or for stations that are near together (this will be done by regional grouping, as described in section \ref{sec:pro}). Each station report data multiple times a day (depending on the station) and for each day of the year.
+
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{stations}
+\caption[Stations]{Number of stations per year}
+\label{fig:stations}
+\end{figure}
+
+noaa data
+parser
+data filtering, corrupted or erroneous data
+
+\subsection{Distributed environment}
+hadoop distributed file system
+
+\subsection{Analysis Tools}
+scala
+
+\section{Experiments}
+\label{sec:res}
 
 
 \section{Conclusions}
+\label{sec:con}
+
+
 
 %\end{document}  % This is where a 'short' article might terminate
 
@@ -105,14 +146,13 @@ Global warming is an open topic of discussion today. While climate scientist deb
 % The following two commands are all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
-\bibliographystyle{abbrv}
+\bibliographystyle{ieeetr}
 \bibliography{vldb_sample}  % vldb_sample.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
 % to resolve all references
 
-\subsection{References}
 %Generated by bibtex from your ~.bib file.  Run latex,
 %then bibtex, then latex twice (to resolve references).
 
