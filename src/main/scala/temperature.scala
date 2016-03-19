@@ -33,13 +33,17 @@ object Temperature{
         result
     }
 
-
     def filterTemp(s: StationData): Boolean = {
-        if (s.temperature == 999.9)
-          false
+        if(List("0","1", "4","5", "9","M", "A","C","P","R","U" ) contains s.tempQuality){
+          if (s.temperature < 62.0 && s.temperature > -94.0)
+            true
+          else
+            false
+        }
         else
-          true
-      }
+            false
+    }
+
 
     def stationDataTominMaxResult(x: Tuple2[Tuple2[Double,Double],StationData]):
          Tuple2[Tuple2[Double,Double],MinMaxResult] = {

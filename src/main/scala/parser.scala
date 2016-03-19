@@ -23,6 +23,8 @@ object Parser{
       if (temp != "9999") {
         tempD = ((temp.toDouble) / 10.0)
       }
+
+      var qualityT = line.substring(dataFields.qualPos(0) - 1, dataFields.qualPos(1)).trim
       /*
       if (line.length > 108) {
         var additionalFields = line.substring(108)
@@ -45,7 +47,7 @@ object Parser{
       }
       */
 
-       new StationData(id, date, latD, longD, tempD)
+       new StationData(id, date, latD, longD, tempD, qualityT)
 
     } else {
        null
@@ -58,7 +60,8 @@ class StationData(
   val date: java.util.Date,
   val latitude: Double,
   val longitude: Double,
-  val temperature: Double
+  val temperature: Double,
+  val tempQuality: String
 ) extends Serializable {
   override def toString(): String = id + "," + date.toString + "," + latitude + "," + longitude + "," + temperature
 }
@@ -72,4 +75,5 @@ object dataFields {
   val latPos = List(29, 34)
   val longPos = List(35, 41)
   val tempPos = List(88, 92)
+  val qualPos = List(93,93)
 }
