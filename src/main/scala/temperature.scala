@@ -17,7 +17,7 @@ object Temperature{
         new AvgResult(x.counter + y.counter, x.temperature + y.temperature)
     }
 
-    def minMaxTemp(x: MinMaxResult, y: MinMaxResult):  MinMaxResult = {
+    def findMinMaxTemp(x: MinMaxResult, y: MinMaxResult):  MinMaxResult = {
         val result = new MinMaxResult(0.0,0.0)
 
         if (x.minTemperature >= y.minTemperature)
@@ -33,6 +33,14 @@ object Temperature{
         result
     }
 
+
+    def filterTemp(s: StationData): Boolean = {
+        if (s.temperature == 999.9)
+          false
+        else
+          true
+      }
+
     def stationDataTominMaxResult(x: Tuple2[Tuple2[Double,Double],StationData]):
          Tuple2[Tuple2[Double,Double],MinMaxResult] = {
         val result = new MinMaxResult(0.0,0.0)
@@ -47,7 +55,9 @@ object Temperature{
 class AvgResult(
     var counter : Int,
     var temperature : Double
-    )
+    ) extends Serializable {
+    override def toString(): String = counter + "," + temperature
+}
 
 
 class MinMaxResult(

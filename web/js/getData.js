@@ -68,7 +68,7 @@
              if (diff < min) {
                  min = diff;
              }
-
+             //repeated for each region
              testData.data.push({
                  lat: res.latitude,
                  lng: res.longitude,
@@ -85,10 +85,10 @@
          res.temp = ((res.temp + min) * heatmapIntensity) / max;
          console.log("temp" + res.temp);
      });
-
+     /*
      testData.data.forEach(function (res) {
          //console.log(res.temp);
-     });
+     });*/
 
  }
 

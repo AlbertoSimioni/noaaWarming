@@ -23,9 +23,6 @@ object Parser{
       if (temp != "9999") {
         tempD = ((temp.toDouble) / 10.0)
       }
-
-      var prechrs = 1
-      var precdep = -0.1
       /*
       if (line.length > 108) {
         var additionalFields = line.substring(108)
@@ -48,12 +45,22 @@ object Parser{
       }
       */
 
-       new StationData(id, date, latD, longD, tempD, prechrs, precdep)
+       new StationData(id, date, latD, longD, tempD)
 
     } else {
        null
     }
   }
+}
+
+class StationData(
+  val id: String,
+  val date: java.util.Date,
+  val latitude: Double,
+  val longitude: Double,
+  val temperature: Double
+) extends Serializable {
+  override def toString(): String = id + "," + date.toString + "," + latitude + "," + longitude + "," + temperature
 }
 
 
