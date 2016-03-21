@@ -73,8 +73,8 @@
        \email{mail}
 % 2nd. author
 \alignauthor Federico Ziliotto\\
-       \affaddr{2577394}\\
-       \email{f.z.ziliotto@student.vu.nl}
+       \affaddr{\texttt{2577394}}\\
+       \email{\texttt{f.z.ziliotto@student.vu.nl}}
 }
 \date{}
 
@@ -91,26 +91,25 @@
 Global warming is an open topic of discussion today. While climate scientist debate on the causes of the gradual temperature rise in the past 50 years (the majority claim the increase of CO2 due to fossil fuel is to blame, other researchers found alternative explanations, like non CO2 greenhouse gases (GHGs) \cite{hansen2000global}), data scientist had access to ever increasing technologies and data sources to study the phenomenon. Whatever the causes, the data collected by different organizations and from different parts of the world all agree that the global temperature in the world is rising \cite{hansen2006global}. We show that this trend is not only real, but the temperature increase is accelerating in the last twenty years at a worrisome rate. We aim to update the results obtained by other institutions with the more recent data, and to do that we want to use more flexible and powerful tools. With the use of distributed computing technologies (like the Hadoop file system and the Spark programming framework) we want to show the capabilities but also the limitations of this new technologies applied in large scale computing. Moreover, we created and interactive tool that may help researchers to visualize the enormous amount of climate data that was collected in the past century and detect possible global warming causes and effects.
 
 \subsection{Data Sources}
-We have access to more than one hundred years of weather data provided by the NOAA (National Oceanic and Atmospheric Administration) organization. The raw data is publicly accessible\footnote{\href{ftp://ftp.ncdc.noaa.gov/pub/data/noaa/}{Noaa public data}}, so anyone interested in analyzing the climate of the past years can use them. The data is organized by year and grouped by ISD (Integrated Surface Data) stations. They also provide a \texttt{perl} script that helps in reading and viewing the data. NOAA also publishes monthly reports on the climate status (like temperature, precipitation, sea level) and compares the data obtained for the last month/year to the averages calculated in the past, accompanied by a software suite to repeat or modify the analysis at home. While this tools and datasets are helpful, there are currently no publicly available tools to perform custom data analysis on the whole raw dataset available. In particular, considering the size of the uncompressed data (\~205 GB) it may be necessary to use a cluster to make complex computations that require more time. 
+We have access to more than one hundred years of weather data provided by the NOAA (National Oceanic and Atmospheric Administration) organization. The raw data is publicly accessible\footnote{\href{ftp://ftp.ncdc.noaa.gov/pub/data/noaa/}{Noaa public data}}, so anyone interested in analyzing the climate of the past years can use them. The data is organized by year and grouped by ISD (Integrated Surface Data) stations. They also provide a \texttt{perl} script that helps in reading and viewing the data. NOAA also publishes monthly reports on the climate status (like temperature, precipitation, sea level) and compares the data obtained for the last month/year to the averages calculated in the past, accompanied by a software suite to repeat or modify the analysis at home. While this tools and datasets are helpful, there are currently no publicly available tools to perform custom data analysis on the whole raw dataset available. In particular, considering the size of the uncompressed data (\~205 GB) it may be necessary to use a cluster to make complex computations that require more time. \\
 
-\subsection{Our Contribution}
-Our aim is to update the recent work done in the climate analysis with the new data available. Moreover we will perform the analysis in a cluster and study a way to improve the analysis performance in this type of environment. In the end, we will compare the results we obtained with the ones available in the literature and evaluate the state of global warming in the recent years.\\
 
-In the following sections we first describe the context of our work and the related literature in section \ref{sec:rel}, then we explain how we implemented the data analysis in section \ref{sec:pro}, then we describe the analysis (\ref{sec:exp}). In section \ref{sec:res} we show the results we obtained and discuss them and finally in section \ref{sec:con} we argue the relevance of our results and future improvements.
+In the following sections we first describe the context of our work and the related literature in section \ref{sec:rel}, the purpose of the research (\ref{sec:question}), then we explain the environment we worked with in section \ref{sec:pro} and the experiments we performed (\ref{sec:exp}). In section \ref{sec:res} we show the results we obtained and discuss them and finally in section \ref{sec:con} we argue the relevance of our results and future improvements.
 
 
 \section{Related Work}
 \label{sec:rel}
 Studies on global and regional surface temperature change has been done in past. Researchers showed that the rate of temperature increase has been higher in the last quarter of the century that it has been in the previous years of the 20\^{th} century. Moreover they calculated an increase in the average global five year mean of about 1\celsius~\cite{hansen1999giss}. This recent trend is particularly important if we consider the temperature changes in the past millennium, and can be considered an unprecedented anomaly\cite{mann1999northern}. More recent studies also show that the mean annual temperature has not risen in the last twenty years, despite the continuous increase of GHGs in the atmosphere\cite{kosaka2013recent}. This suggests that either the global warming phenomenon that was registered in the period 1975-2000 had different causes or that the more recent stable trend has an origin that balance the greenhouse effects.
+Research done on the temperature changes in the last century in the U.S. shows that the yearly mean trend is slightly different than the worldwide one. Indeed, we in the U.S., temperature somewhat decreased from 1930 to 1980, and a warming trend has returned only in the last decades of the century\cite{hansen1999giss}.  
 
 \section{Research Question}
-
+\label{sec:question}
+Our aim is to update the recent work done in the climate analysis with the new data available. We will first analyze the structure and characteristics of the data provided by the NOAA organization. Then we are going to perform different analysis on the temperature data and compare the results with the ones found in literature.  Moreover we will perform the analysis utilizing distributed computing and study the advantages and disadvantages of this technology. In the end, we will make an evaluation on the threat of global warming based on the results we obtained. \\
 
 
 \section{Project setup}
 \label{sec:pro}
 In this section we explain in more detail how we performed the analysis, what tools we used and the preliminary work on the data before the analysis. 
-
 
 \subsection{Data Format}
 The public NOAA data repository contains a file for each station for each year. The name of each file is \{USAF code\}\-\{WBAN code\}-\{year\}, where USAF is the Air Force Station ID and the WBAN is the NCDC (National Climate Data Center) station number. The number of station for each year is shown in figure \ref{fig:stations}. As we can see the number of stations has steadily increased during the years. More importantly, we have to be aware of the results we obtain analyzing years where the number of stations is very low. Since the distribution of the station around the world is not uniform and they don't cover every area, it's difficult to obtain correct results on the global scale. What we can do is to consider the fluctuation of data for the same station or for stations that are near together (this will be done by regional grouping, as described in section \ref{sec:pro}). Each station report data multiple times a day (depending on the station) and for each day of the year. \\
@@ -151,15 +150,23 @@ An important aspect we had to consider before proceeding with the analysis is th
 \label{fig:stations}
 \end{figure}
 
-Considering that the stations for most of the years are not uniformly distributed, we decided to take analyze the global temperature averages only for some selected regions that have the highest amount of data available (e.g. the United States and European area). \\
-Nonetheless, we calculated for each year the mean, minimum and maximum temperature
+The important things to consider before proceeding with the analysis are:
+\begin{itemize}
+    \item The stations are not distributed uniformly. In particular, the areas most covered are only a portion of the total surface of the earth and include mostly the land areas (the coverage of the oceans is pretty limited);
+    \item There are no guarantees that a station reporting one year will report also the following years;
+    \item Although the general trend manifest an increase of the number of stations, this is not always true (e.g. during the late 60's there are less stations reporting);
+    \item The years before 1930 show a very low number of stations. We will have take this into account when we evaluate the results for this time frame.
+\end{itemize}
 
 
-\subsection{Distributed environment}
+\subsection{Data Analysis Environment}
 The technological environment we decided to use for this project consist of:
+\begin{itemize}
+    \item \textbf{HDFS}\footnote{\href{Hadoop Distributed File System}{http://hadoop.apache.org/}}: a distributed file system that allows the developers to store and retrieve large quantity of data between multiple machines as if it was a single one;
+    \item \textbf{Spark}\footnote{\href{Apache Spark}{http://spark.apache.org/}}: programming framework to develop applications for large scale data processing on horizontally scalable clusters.
+\end{itemize}
 
-\textbf{HDFS}\footnote{\url[Hadoop Distributed File System]{http://hadoop.apache.org/}}: a distributed file system that allows the developers to store and retrieve large quantity of data between multiple machines as if it was a single one;
-\textbf{Spark}\footnote{\url[Apache Spark]{http://spark.apache.org/}}: programming framework to develop applications for large scale data processing on horizontally scalable clusters. The choice of this technology is motivated by size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. The second advantage is that we would like to make multiple transformations to the data and Spark allows to easily cache the intermediate results to be reused efficiently.\\
+\textbf{HDFS}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{dataSize}
@@ -167,16 +174,24 @@ The technological environment we decided to use for this project consist of:
 \label{fig:dataSize}
 \end{figure}
 
-The data stored in the distributed file system is grouped in folder by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used is filecrusher\footnote{\url[Hadoop Filecrusher]{https://github.com/edwardcapriolo/filecrush}}. \\
+The data stored in the distributed file system is grouped in folder by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used is filecrusher\footnote{\href{Hadoop Filecrusher}{https://github.com/edwardcapriolo/filecrush}}. \\
 
-
-\subsection{Analysis Tools}
-In this section we briefly present the programming environment we use and the algorithm we implemented to analyze the NOAA dataset.
+\textbf{Spark}
+The choice of this technology is motivated by size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. \\
+The second advantage is that we would like to make multiple transformations to the data and Spark allows to easily cache the intermediate results to be reused efficiently. In this way, there is no need continuously store the results and load them to be reused for the next MapReduce operation. One example is calculating the large region averages, for which we make use of the intermediate results of the worldwide regions (each one of equal size) analysis\ref{fig:analysis}. The caching feature is used multiple times throughout the execution and drastically improve the performance. \\
 
 
 \section{Experiments}
 \label{sec:exp}
 We performed two main type of analysis: a five year span analysis that considers all the measurement reported by stations near each other in five years, and an analysis on large earth regions on a yearly basis. \\
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{analysis}
+\caption{Analysis scheme}
+\label{fig:analysis}
+\end{figure}
+
+
 The basic steps that both analysis perform are:
 \begin{enumerate}
     \item Load data in memory;

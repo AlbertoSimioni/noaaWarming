@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <script type="text/javascript" src="1980.js"></script>
+    <script type="text/javascript" src="2014.js"></script>
     <title>Simple markers</title>
     <style>
       html, body {
@@ -41,7 +41,8 @@ function addMarker(lat,lng) {
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat,lng),
             map: map,
-            icon:image
+            icon:image,
+            title:lat +", " + lng
         });
 }
 

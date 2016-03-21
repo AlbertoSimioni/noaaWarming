@@ -1,4 +1,13 @@
-html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0; font-family:sans-serif; }
-      #map-canvas { height: 100% }
-      h1 { position:absolute; background:black; color:white; padding:10px; font-weight:200; z-index:10000;}
+/* all map containers must be full height */
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}
+#map-canvas {
+    width:100%;
+    height: 100%;
+    height: 400px ;
+}
