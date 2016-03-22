@@ -4,9 +4,6 @@ import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import scala.io.Source
 import java.io.{ IOException, FileOutputStream, FileInputStream, File }
-import java.util.zip.{ ZipEntry, ZipInputStream }
-import scala.collection.mutable.ListBuffer
-import scala.collection.mutable.StringBuilder
 import org.apache.spark.storage._
 import scala.collection.immutable.ListMap
 import java.io._
@@ -24,7 +21,7 @@ object WeatherApp {
     var startYear = 1901
     var endYear = startYear + NUM_GROUPED_YEARS -1
 
-    var fiveYearsAvgDataset :  RDD[((Double,Double),Double)] = null
+    var fiveYearsAvgDataset :  RDD[((Double,Double),Double,Double)] = null
     var fiveYearsMinMaxDataset :  RDD[((Double,Double),MinMaxResult)] = null
     for(year <- 1901 to 2015){
       val wheatherFile = "hdfs://hathi-surfsara:8020/user/lsde06/"+year+"small/*.gz"
@@ -43,12 +40,14 @@ object WeatherApp {
 
       //AVG TEMP PER REGION
       val region_sums=region_data.map(Temperature.dataToAvgResult).reduceByKey(Temperature.sumTempCounter)
-      val region_avgs = region_sums.map{case(region,avgResult)=>(region, avgResult.temperature/avgResult.counter)}.cache()
+
+      val region_avgs = region_sums.map{case(region,avgResult)=>(region, avgResult.temperatureSum/avgResult.counter, avgResult.temperatureSumsq/avgResult.counter)}.cache()
 
       //MIN AND MAX TEMPERATURE PER REGION
       val minMaxTemperature = region_data.map(Temperature.dataTominMaxResult).reduceByKey(Temperature.findMinMaxTemp).cache()
 
       region_data.unpersist()
+
       //USA AVARAGE MIN MAX TEMPERATURE
       calculateAvgMinMaxByCoordinates(region_avgs,minMaxTemperature, new RegionCoordinates(50,-128,24,-65), year,"usa")
 
@@ -62,7 +61,7 @@ object WeatherApp {
       //GROUPING DIFFERENT YEAR DATA
       if(year == startYear){
         fiveYearsAvgDataset = region_avgs
-        fiveYearsMinMaxDataset = minMaxTemperature
+        //fiveYearsMinMaxDataset = minMaxTemperature
       }
 
       else{
@@ -78,10 +77,9 @@ object WeatherApp {
 
       if(year == endYear){
         //summing the value of the different years
-        val years_sum = fiveYearsAvgDataset.map{case(pos,avg) => (pos,new AvgResult(1,avg))}.reduceByKey(Temperature.sumTempCounter)
+        val years_sum = fiveYearsAvgDataset.map{case(pos,avg,sumsq) => (pos,new AvgResult(1,avg,sumsq))}.reduceByKey(Temperature.sumTempCounter)
         //calculating avgs
-        val region_five_years_avgs = years_sum.map{case(region,avgResult)=>(region, avgResult.temperature/avgResult.counter)}
-
+        val region_five_years_avgs = years_sum.map(Temperature.computeAvgStd)
         region_five_years_avgs.map(Temperature.avgResultToString).saveAsTextFile("/user/lsde06/results"+startYear+"_"+endYear+"/avgs/")
 
         val five_years_minMaxTemperature = fiveYearsMinMaxDataset.reduceByKey(Temperature.findMinMaxTemp)
@@ -98,17 +96,19 @@ object WeatherApp {
   } // main
 
 
-  def calculateAvgMinMaxByCoordinates(avg_data: RDD[((Double,Double),Double)], minMax_data:RDD[((Double,Double),MinMaxResult)], coordinates: RegionCoordinates, year: Int , regionName: String){
+  def calculateAvgMinMaxByCoordinates(avg_data: RDD[((Double,Double),Double,Double)], minMax_data:RDD[((Double,Double),MinMaxResult)], coordinates: RegionCoordinates, year: Int , regionName: String){
 
-      val avg_filtered = avg_data.filter(Filter.filterCoordinates(coordinates))
+      val avg_filtered = avg_data.filter(Filter.filterCoordinates2(coordinates))
       val data_count= avg_filtered.count()
       if (data_count!= 0){
-        val avg = avg_filtered.map{case(region,avgTemp) => avgTemp}.reduce((avgTemp1,avgTemp2)=>avgTemp1+avgTemp2) / data_count
+        val temp_sum = avg_filtered.map{case(region,avgTemp,sumsq) => new AvgResult(1,avgTemp,sumsq)}.reduce(Temperature.sumTempCounter)
+
+        val avgStd = Temperature.computeAvgStd(((0,0),temp_sum))
 
         val minMax_filtered = minMax_data.filter(Filter.filterCoordinates(coordinates))
         val minMax = minMax_filtered.map{case(region,minMaxTemp) => minMaxTemp}.reduce(Temperature.findMinMaxTemp)
         val output = new FileWriter(new File("/home/lsde06/"+regionName+".csv"),true)
-        output.write(year +"," + avg + "," + minMax.minTemperature + "," +minMax.maxTemperature+","+data_count+"\n")
+        output.write(year +"," + avgStd._2 + "," +avgStd._3 +"," + minMax.minTemperature + "," +minMax.maxTemperature+","+data_count+"\n")
         output.close()
     }
   }

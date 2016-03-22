@@ -13,7 +13,7 @@ for i in range(0,23): #0,23
     call(["hdfs","dfs", "-getmerge","/user/lsde06/results"+currYearsString + "/minmax" ,"/home/lsde06/minmax/"+ currYearsString+".csv"])
 
 
-    fieldnames=["lat","long","temp"]
+    fieldnames=["lat","long","avgTemp","stddev"]
     f=open("avgs/"+currYearsString+'.csv', 'r')
     csv_reader = csv.DictReader(f,fieldnames)
     jsonf = open("avgs/"+currYearsString+'.json', 'w')

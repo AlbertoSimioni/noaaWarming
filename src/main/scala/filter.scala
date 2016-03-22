@@ -19,6 +19,10 @@ object Filter{
       false
   }
 
+  def filterCoordinates2(coordinates : RegionCoordinates)(regionAvg: ((Double,Double),Any,Any)): Boolean = {
+    filterCoordinates(coordinates)((regionAvg._1),regionAvg._2)
+  }
+
 }
 
 

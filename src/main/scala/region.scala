@@ -2,7 +2,7 @@ object Region{
     val LATITUDE_SIZE = 1.0
     val LONGITUDE_SIZE = 1.0
 
-    def groupByRegion(data: StationData):  Tuple2[Tuple2[Double,Double],Double] = {
+    def groupByRegion(data: StationData):  ((Double,Double),Double) = {
         var regionLat = 0.0
         var regionLong = 0.0
         if(data.latitude >= 0){
@@ -17,17 +17,3 @@ object Region{
         ((regionLat,regionLong),data.temperature)
     }
 }
-
-
-/*
-class Region(
-    var regionLatitude: Double,
-    var regionLongitude: Double) extends Serializable {
-    override def toString(): String = regionLatitude + "," + regionLongitude
-    /*def equals(that: Region): Boolean = {
-        if((this.regionLongitude == that.regionLongitude) && (this.regionLatitude == that.regionLatitude))
-            true
-        else false
-    }*/
-    val key : String = regionLatitude.toString + regionLongitude.toString
-}*/

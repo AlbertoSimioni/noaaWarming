@@ -27,27 +27,6 @@ object Parser{
       var qualityT = line.substring(dataFields.qualPos(0) - 1, dataFields.qualPos(1)).trim
 
       val reportType = line.substring(dataFields.repTypePos(0) - 1, dataFields.repTypePos(1)).trim
-      /*
-      if (line.length > 108) {
-        var additionalFields = line.substring(108)
-        val aa1pos = additionalFields.indexOf("AA1", 0)
-
-        if (aa1pos != -1 && line.length >= aa1pos + 9) {
-          prechrs = additionalFields.substring(aa1pos + 3, aa1pos + 5).toInt
-          if (prechrs == 99) {
-            prechrs = -1
-          }
-          precdep = (additionalFields.substring(aa1pos + 5, aa1pos + 9)).toDouble
-          if (precdep != 9999.toDouble) {
-            precdep = (precdep.toInt / 10.0)
-          } else precdep = -0.1;
-
-          //liquid precipitations
-          //output.appendAll(("prechrs" + ": "+ prechrs +"\n")
-          //output.appendAll("precdep" + ": "+ precdep +"\n")
-        }
-      }
-      */
 
        new StationData(id, date, latD, longD, tempD, qualityT, reportType)
 
