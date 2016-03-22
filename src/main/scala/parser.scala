@@ -25,6 +25,8 @@ object Parser{
       }
 
       var qualityT = line.substring(dataFields.qualPos(0) - 1, dataFields.qualPos(1)).trim
+
+      val reportType = line.substring(dataFields.repTypePos(0) - 1, dataFields.repTypePos(1)).trim
       /*
       if (line.length > 108) {
         var additionalFields = line.substring(108)
@@ -47,7 +49,7 @@ object Parser{
       }
       */
 
-       new StationData(id, date, latD, longD, tempD, qualityT)
+       new StationData(id, date, latD, longD, tempD, qualityT, reportType)
 
     } else {
        null
@@ -61,7 +63,8 @@ class StationData(
   val latitude: Double,
   val longitude: Double,
   val temperature: Double,
-  val tempQuality: String
+  val tempQuality: String,
+  val reportType: String
 ) extends Serializable {
   override def toString(): String = id + "," + date.toString + "," + latitude + "," + longitude + "," + temperature
 }
@@ -74,6 +77,7 @@ object dataFields {
   val gmtPos = List(24, 27)
   val latPos = List(29, 34)
   val longPos = List(35, 41)
+  val repTypePos = List(42,46)
   val tempPos = List(88, 92)
   val qualPos = List(93,93)
 }

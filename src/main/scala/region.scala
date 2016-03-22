@@ -1,8 +1,8 @@
 object Region{
-    val LATITUDE_SIZE = 1
-    val LONGITUDE_SIZE = 1
+    val LATITUDE_SIZE = 1.0
+    val LONGITUDE_SIZE = 1.0
 
-    def groupByRegion(data: StationData):  Tuple2[Tuple2[Double,Double],StationData] = {
+    def groupByRegion(data: StationData):  Tuple2[Tuple2[Double,Double],Double] = {
         var regionLat = 0.0
         var regionLong = 0.0
         if(data.latitude >= 0){
@@ -14,9 +14,10 @@ object Region{
             regionLong = ((data.longitude/LONGITUDE_SIZE).toInt) * LONGITUDE_SIZE + LONGITUDE_SIZE /2
         else
             regionLong = ((data.longitude/LONGITUDE_SIZE).toInt -1) * LONGITUDE_SIZE + LONGITUDE_SIZE /2
-        ((regionLat,regionLong),data)
+        ((regionLat,regionLong),data.temperature)
     }
 }
+
 
 /*
 class Region(

@@ -8,9 +8,9 @@ object Temperature{
         }
 
 
-    def stationDataToAvgResult(x: Tuple2[Tuple2[Double,Double],StationData]):
+    def dataToAvgResult(x: Tuple2[Tuple2[Double,Double],Double]):
         Tuple2[Tuple2[Double,Double],AvgResult] = {
-        (x._1, new AvgResult(1,x._2.temperature))
+        (x._1, new AvgResult(1,x._2))
         }
 
     def sumTempCounter(x: AvgResult, y: AvgResult): AvgResult = {
@@ -33,23 +33,12 @@ object Temperature{
         result
     }
 
-    def filterTemp(s: StationData): Boolean = {
-        if(List("0","1", "4","5", "9","M", "A","C","P","R","U" ) contains s.tempQuality){
-          if (s.temperature < 62.0 && s.temperature > -94.0)
-            true
-          else
-            false
-        }
-        else
-            false
-    }
 
-
-    def stationDataTominMaxResult(x: Tuple2[Tuple2[Double,Double],StationData]):
+    def dataTominMaxResult(x: Tuple2[Tuple2[Double,Double],Double]):
          Tuple2[Tuple2[Double,Double],MinMaxResult] = {
         val result = new MinMaxResult(0.0,0.0)
-        result.minTemperature = x._2.temperature
-        result.maxTemperature = x._2.temperature
+        result.minTemperature = x._2
+        result.maxTemperature = x._2
         (x._1,result)
     }
 
