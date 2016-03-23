@@ -109,7 +109,7 @@ Our aim is to update the recent work done in the climate analysis with the new d
 
 \section{Project setup}
 \label{sec:pro}
-In this section we explain in more detail how we performed the analysis, what tools we used and the preliminary work on the data before the analysis. 
+In this section we explain in more detail how we performed the analysis, what tools we used and the preliminary work on the data before the analysis.
 
 \subsection{Data Format}
 The public NOAA data repository contains a file for each station for each year. The name of each file is \{USAF code\}\-\{WBAN code\}-\{year\}, where USAF is the Air Force Station ID and the WBAN is the NCDC (National Climate Data Center) station number. The number of station for each year is shown in figure \ref{fig:stations}. As we can see the number of stations has steadily increased during the years. More importantly, we have to be aware of the results we obtain analyzing years where the number of stations is very low. Since the distribution of the station around the world is not uniform and they don't cover every area, it's difficult to obtain correct results on the global scale. What we can do is to consider the fluctuation of data for the same station or for stations that are near together (this will be done by regional grouping, as described in section \ref{sec:pro}). Each station report data multiple times a day (depending on the station) and for each day of the year. \\
@@ -205,7 +205,10 @@ The basic steps that both analysis perform are:
 \subsection{Regional five year period analysis}
 The aim of this analysis is to calculate the temperature statistics (mean, maximum and minimum) on every area of the earth for which we have data. After that we can compare the situation for the same areas in different time frames and show it with a world map view (as shown in \ref{sec:map}). \\
 The first problem is that while the regions we want to compare are the same size and uniformly distributed around the earth, the stations are not. So we defined regions of size 1\degree latitude and 1\degree longitude. This is approximately the area covered by the region of Holland in the Netherlands. Then we assigned each measurement (for each one there is the coordinates reported) to a region. \\
-Our analysis proceeded by loading five consecutive years of measurements at a time, group them in small regions and, for each region, calculate the arithmetic mean, the minimum and the maximum temperature. This was done for all years from 1901 to 2015 (the year 2016 was excluded from the analysis due to incomplete data).\\
+Our analysis proceeded by loading five consecutive years of measurements at a time, group them in small regions and, for each region, calculate the arithmetic mean, the minimum, the maximum temperature and the standard deviation. This was done for all years from 1901 to 2015 (the year 2016 was excluded from the analysis due to incomplete data).\\
+\subsection{Median}
+Another value we wanted to extract from the datasets is the median. We implemented the code to calculate it, but we didn't have enough time to test it and obtain the results for all the datasets. The problem with calculating the median is that it is not a commutative and associative operation (the median of medians is not the median of the entire group). This means that there is no easy way to use the reduce function to combine results computed in different machines in a distributed way. The simple way to calculate the median is to sort the desired data and look at the value in the middle. The problem with this solution is that it's not scalable. Indeed, applied to datasets in the order of GB in sizes this operation is very slow. Work has been done by various researchers to tackle this kind of problems and improve the efficiency of non associative operations (\cite{liu2009computing}).
+
 
 
 \subsection{Temperature yearly trends analysis}
@@ -215,14 +218,44 @@ In this type of analysis we focused on some particular large areas of on the ear
     \item Europe: from coordinate N\ang{71;;} W\ang{11;;} to N\ang{35;;} E\ang{41;;};
     \item Australia: from coordinate S\ang{9;;} E\ang{111;;} to S\ang{44;;} E\ang{156;;};
 \end{itemize}
-For each region we calculated average, minimum and maximum of every year from 1980 to 2015. The year range is chosen based on the availability of data.
+For each region we calculated minimum, maximum, average and standard deviation of every year until 2015. The year range is chosen based on the availability of data. 
 
 \section{Results}
 \label{sec:res}
 In this section we report the results obtained from the analysis described in section \ref{sec:exp}. 
 
+\subsection{Interactive map}
+The first tool we worked on is a dynamic map that allows to visualize the difference between temperature values (average, maximum, minimum) between two datasets. Each dataset is created from the analysis one described in section \ref{sec:exp} and are composed of the aggregated results of the five yearly analysis in which we divided the surface in small regions of 1\degree latitude and 1\degree longitude. \\
+We used the map provided by Google\footnote{\href{Google Maps}{https://developers.google.com/maps/}}. We created a custom heatmap that shows on each region of the map different colors to show an increase or decrease for a particular value in that region (shades of blue for reduction and red for a gain). 
+
+\subsection{Zonal Analysis}
+In this section we report the results of the regional analysis done for: Europe, United States and Australia. We start considering the amount of data available from each region for each years. 
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{stationsRegion}
+\caption{Percentage of regions covered by at least one station per region.}
+\label{fig:stationsRegion}
+\end{figure}
+
+The chart in figure \ref{fig:stationsRegion} shows the surface coverage of the selected regions for each year from the data we analyzed. As we can see, we don't have data from every part of the regions, with Europe and US the more covered ones (with peaks of 70\% and 60\%). The are two main reason behind this:
+\begin{itemize}
+    \item In the chart we took into account the number of regions for which we have data on the total amount of regions in the area. With a different selection of region size we could increase or decrease the total coverage (at the expense of precision).
+    \item There may be areas in the regions where it's more difficult to have an uniform stations coverage because of geomorphological reasons. For instance, there are far less regions covered in the middle part of Australia due to its desert climate, that makes it more difficult to install, maintain and monitor the stations.
+\end{itemize}
+
+Now we move on to consider the average analysis on the three selected regions. 
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{averageRegions}
+\caption{Average and 5-year average for three different regions.}
+\label{fig:stationsRegion}
+\end{figure}
+
+
 \section{Conclusions}
 \label{sec:con}
+Before answering the question we asked earlier we will take a brief general overview of the characteristics of this project. One of the main problem we encountered is the limited (if not absence) of documentation describing the data. Especially for the older datasets we had to directly analyze the data to know the origin (region on earth) or the time coverage (day/night reports, coverage of all months). Moreover, we had to take into account during the analysis and the result discussion the anomalies we discovered in the station number charts (\ref{App:AppendixA}). Without a uniform and well formed source it's more difficult to extract reliable statistics.\\
+
 
 \newpage
 \appendix
@@ -234,42 +267,39 @@ Here is an overview of the stations for some selected years. We decided to show 
 \caption{In the first years we only have measurements coming from stations in Finland}
 \label{fig:stations1907}
 \end{figure}
-
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1930}
 \caption{Here we can see the stations cover the most part of central Europe. The problem we encountered is that there is no continuity in the stations that are used between consecutive years, so it's difficult to make comparisons.}
 \label{fig:stations1930}
 \end{figure}
-
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1945}
 \caption{Around this year we start to have a relevant number of stations that cover most part of the surface.}
 \label{fig:stations1945}
 \end{figure}
-
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1968}
 \caption{In the late 60s we notice a sudden drop in the earth coverage compared to the previous years. We took this into account when making the analysis.}
 \label{fig:stations1968}
 \end{figure}
-
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1972}
 \caption{As shown in figure \ref{fig:stations}, we noticed a sudden drop in the number of stations for this year. In particular we observe the absence of stations from east Europe and the ex Soviet Union Area.}
 \label{fig:stations1972}
 \end{figure}
-
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1980}
 \caption{From this year onwards we have a large number of stations covering most part of the surface.}
 \label{fig:stations1980}
 \end{figure}
-
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations2014}
 \caption{Measurement format}
 \label{fig:stations2014}
 \end{figure}
+
+
+
 
 \clearpage
 %\end{document}  % This is where a 'short' article might terminate
