@@ -61,7 +61,7 @@ object WeatherApp {
       //GROUPING DIFFERENT YEAR DATA
       if(year == startYear){
         fiveYearsAvgDataset = region_avgs
-        //fiveYearsMinMaxDataset = minMaxTemperature
+        fiveYearsMinMaxDataset = minMaxTemperature
       }
 
       else{
