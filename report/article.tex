@@ -170,7 +170,7 @@ The technological environment we decided to use for this project consist of:
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{dataSize}
-\caption{Size of the data per year}
+\caption{Size of the data per year.}
 \label{fig:dataSize}
 \end{figure}
 
@@ -248,9 +248,42 @@ Now we move on to consider the average analysis on the three selected regions.
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{averageRegions}
 \caption{Average and 5-year average for three different regions.}
-\label{fig:stationsRegion}
+\label{fig:averageRegions}
 \end{figure}
 
+In figure \ref{fig:averageRegions} we show the evolution of both the average and the 5-year average for the three region we considered. The first thing to consider is that the in the earlier years we have less data available. For instance in Europe, we have data mostly from stations in Finland for the period 1901-1930. This explain two anomalies in the chart:
+\begin{itemize}
+    \item A sudden change in the average temperature between two time frames (the sudden increase in the average temperature for Europe is caused by the presence of new stations in warmer areas);
+    \item The variance of annual temperatures is more evident in the years with less data and stabilizes for all three regions from the last decades of the century.
+\end{itemize}
+
+\subsubsection{Temperature Anomalies}
+In figure \ref{fig:UsAnomalies}, \ref{fig:EuAnomalies} and \ref{fig:AuAnomalies} we used the same method described by Hansen (\cite{hansen1999giss}) to calculate the temperature anomalies for each dataset. We first calculated a total average value for each region for the time frame examined. Then we calculated the difference between the yearly average values and the total obtained. In this way it's easier to spot extremely hot or cold years and a general temperature trend. 
+
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{UsAnomalies}
+\caption{Average and 5-year average for three different regions.}
+\label{fig:UsAnomalies}
+\end{figure}
+
+From the US chart (\ref{fig:UsAnomalies}) the interesting thing to notice is a slightly warming trend between the 60s and 70s and an opposite one for the last thirty years. This goes in accordance with the observation made by other researchers\cite{hansen2006global}. The main suspect for this phenomenon is thought to be the hurricane El Nino that hit the US in 1998.
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{EuAnomalies}
+\caption{Average and 5-year average for three different regions.}
+\label{fig:EuAnomalies}
+\end{figure}
+
+The EU chart shows, starting from the late 70s, a pretty clear trend of temperature increase. Interesting also to note the high average temperatures in the period 1940-1945, during WW2. We leave to the reader to use the interactive map we created to correlate the data sources distribution and the temperature levels.
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{AuAnomalies}
+\caption{Average and 5-year average for three different regions.}
+\label{fig:AuAnomalies}
+\end{figure}
+
+For the Australia data the most interesting fact we notice is a sudden plunge in the temperature during the 80s. This can be explained by looking at the stations number chart for that region, that manifest a decrease for the same period of time. As for the European situation, we can see a slight increase in the average temperature, that is confirmed by the results of other studies, that shows an increase of the average temperature for the Australian continent of about 0.8\degree. 
 
 \section{Conclusions}
 \label{sec:con}
