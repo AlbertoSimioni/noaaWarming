@@ -32,6 +32,7 @@
       max: 22,
       values: [ 21, 22 ],
       slide: function( event, ui ) {
+        if(ui.values[1] -ui.values[0] == 0){console.log("MADDDDONNAA"); return false}
         var first1 = 1901+ui.values[0]*5
         var first2 = 1901+ui.values[0]*5+4
         var second1 = 1901+ui.values[1]*5
@@ -72,12 +73,12 @@
     <!-- Brand and toggle get grouped for better mobile display -->
 
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span></button> <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span></button> <a class="navbar-brand" >Global Warming</a>
     </div><!-- Collect the nav links, forms, and other content for toggling -->
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index..html">Global Warming Map</a></li>
+        <li><a href="index.html">Global Warming Map</a></li>
 
         <li><a href="unitedstates.html">United States</a></li>
 
@@ -111,7 +112,7 @@
         // standard map
         map = new google.maps.Map(document.getElementById('map-canvas'),
         {
-            zoom : 1,
+            zoom : 3,
             center :
             {
                 lat : 10,
@@ -190,8 +191,39 @@
           getData(first1+"_"+first2,second1+"_"+second2, $( "#metric" ).val());
         });
 
+        $(document).ready(function(){
+          var can = document.getElementById('canvas1');
+          var ctx = can.getContext('2d');
+
+          ctx.lineWidth = 15;
+
+          // linear gradient from start to end of line
+          var grad= ctx.createLinearGradient(40, 35, 540, 35);
+          grad.addColorStop(.1, "rgba(0,47,255,1)");
+          grad.addColorStop(.2, "rgba(0,47,255,0.6)");
+          grad.addColorStop(.4799, "rgba(0,47,255,0.05)");
+          grad.addColorStop(.48, "rgb(255,255,255)");
+          grad.addColorStop(.7, "yellow");
+          grad.addColorStop(1, "rgb(255,0,0)");
+          ctx.strokeStyle = grad;
+
+          ctx.beginPath();
+          ctx.moveTo(40,35);
+          ctx.lineTo(540,35);
+          ctx.stroke();
+          ctx.font = "15px Arial";
+          ctx.fillText("-2.5°",0,42)
+          ctx.fillText("+2.5°",550,42)
+        });
         //]]>
         </script>
+
+        <div>
+          <canvas id="canvas1" width="585" height="75" style="padding-left: 0;padding-right: 0;
+          margin-left: auto;
+    margin-right: auto;
+    display: block;"></canvas>
+        </div>
 
         <p class="text-center" style="font-size:1.8em;">
           <label for="amount">Years range:</label>

@@ -53,11 +53,6 @@
              if (diff > max) {
 
                  max = diff;
-                 //console.log("max" + max);
-                 /*console.log(mapPos[{
-                     lat: res.latitude,
-                     lng: res.longitude
-                 }] + "  " + res.avgTemp);*/
              }
              if (diff < min) {
                  min = diff;
@@ -102,6 +97,6 @@
              }
          }
      };
-     xhr.open("GET", path, true);
+     xhr.open("GET", path, false);
      xhr.send();
  }
