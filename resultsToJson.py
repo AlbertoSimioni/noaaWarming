@@ -21,7 +21,7 @@ for i in range(0,23): #0,23
     jsonf.write(data)
     f.close()
     jsonf.close()
-    os.remove("avgs/"+currYearsString+'.csv')
+    #os.remove("avgs/"+currYearsString+'.csv')
 
 
     fieldnames=["lat","long","minTemp","maxTemp"]
@@ -32,4 +32,4 @@ for i in range(0,23): #0,23
     jsonf.write(data)
     f.close()
     jsonf.close()
-    os.remove("minmax/"+currYearsString+'.csv')
+    #os.remove("minmax/"+currYearsString+'.csv')

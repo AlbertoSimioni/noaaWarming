@@ -1,0 +1,1 @@
+ hadoop jar filecrush-2.2.2-SNAPSHOT.jar com.m6d.filecrush.crush.Crush -input-format text -output-format text -compress gzip --max-file-blocks 1 /user/lsde06/results2000/ /user/lsde06/results2000u/ 20101121121212

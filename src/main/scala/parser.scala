@@ -18,11 +18,8 @@ object Parser{
       var longD = ((long.toInt) / 1000.0)
 
       var temp = line.substring(dataFields.tempPos(0) - 1, dataFields.tempPos(1)).trim
-      var tempD = 999.9
 
-      if (temp != "9999") {
-        tempD = ((temp.toDouble) / 10.0)
-      }
+      var tempD = ((temp.toDouble) / 10.0)
 
       var qualityT = line.substring(dataFields.qualPos(0) - 1, dataFields.qualPos(1)).trim
 

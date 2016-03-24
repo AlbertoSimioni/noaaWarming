@@ -1,23 +1,22 @@
- var mapPos = [];
  var heatmapIntensity = 10;
- var min = 1000;
- var max = -1000;
 
- var testData = {
-     max: heatmapIntensity,
-     data: []
- }
-
- function getData(year1, year2) {
-     min = 1000;
-     max = -1000;
+ function getData(year1, year2, metric) {
+    console.log(metric)
+    mapPos = {}
+     testData = {
+        max: heatmapIntensity,
+        data: []
+     }
      console.log("getting data");
-     loadJSON(year2 + '.json',
+     var folder = null;
+     if(metric === "avgTemp" || metric === "stddev") folder = "avgs"
+     if(metric === "minTemp" || metric === "maxTemp") folder = "minmax"
+     loadJSON("results/"+folder+"/"+year2 + '.json',
          function (data) {
-             fillData(data);
-             loadJSON(year1 + ".json",
+             fillData(data,mapPos,metric);
+             loadJSON("results/"+folder+"/"+year1 + ".json",
                  function (data2) {
-                     calculateDifference(data2);
+                     calculateDifference(data2,mapPos,testData,metric);
                      insertData(testData);
 
                      console.log("finish");
@@ -35,65 +34,59 @@
      );
  }
 
- function fillData(data) {
+ function fillData(data,mapPos,metric) {
      data.results.forEach(function (res) {
 
-         mapPos[{
-             lat: res.latitude,
-             lng: res.longitude
-         }] = res.avgTemp;
+         mapPos[res.lat +"_" + res.long] = res[metric];
          //testData.data.push({lat: res.latitude, lng:res.longitude, count: res.avgTemp})
      });
  }
 
- function calculateDifference(data2) {
+ function calculateDifference(data2,mapPos,testData,metric) {
+     var min = 1000;
+     var max = -1000;
      data2.results.forEach(function (res) {
-         if (mapPos[{
-                 lat: res.latitude,
-                 lng: res.longitude
-             }] !== "undefined") {
-             var diff = difference(mapPos[{
-                 lat: res.latitude,
-                 lng: res.longitude
-             }], res.avgTemp);
+
+         if (mapPos[res.lat +"_" + res.long] !== undefined) {
+            //console.log(mapPos[res.lat +"_" + res.long])
+             var diff = difference(mapPos[res.lat +"_" + res.long], res[metric]);
              if (diff > max) {
 
                  max = diff;
-                 console.log("max" + max);
-                 console.log(mapPos[{
+                 //console.log("max" + max);
+                 /*console.log(mapPos[{
                      lat: res.latitude,
                      lng: res.longitude
-                 }] + "  " + res.avgTemp);
+                 }] + "  " + res.avgTemp);*/
              }
              if (diff < min) {
                  min = diff;
              }
              //repeated for each region
              testData.data.push({
-                 lat: res.latitude,
-                 lng: res.longitude,
+                 lat: res.lat,
+                 lng: res.long,
                  temp: diff
              });
          }
      });
 
      min = Math.abs(min);
-     max = Math.abs(max);
-     max = max + min;
-     //console.log("min" + min + "  max:" + max);
+     console.log("min" + min + "  max:" + max);
      testData.data.forEach(function (res) {
-         res.temp = ((res.temp + min) * heatmapIntensity) / max;
-         console.log("temp" + res.temp);
+        var old = res.temp
+        res.temp =  5 + res.temp*2
+        if(res.temp > 10) res.temp = 10
+        if(res.temp < 0) res.temp = 0
+        if(res.temp < 4.5){
+            var a =res.temp - 2.25
+            res.temp = 2.25-a
+        }
      });
-     /*
-     testData.data.forEach(function (res) {
-         //console.log(res.temp);
-     });*/
-
  }
 
  function difference(num1, num2) {
-     return (num1 > num2) ? num1 - num2 : num2 - num1
+     return num1 - num2
  }
 
  function loadJSON(path, success, error) {
