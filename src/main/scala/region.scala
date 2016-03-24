@@ -1,7 +1,11 @@
+
 object Region{
+    //number of degrees of the regions where latitude and longitude are mapped to
     val LATITUDE_SIZE = 1.0
     val LONGITUDE_SIZE = 1.0
 
+    //Compute the region where the record belongs to
+    //Returns the lat and long of the center of the region and the temperature value
     def groupByRegion(data: StationData):  ((Double,Double),Double) = {
         var regionLat = 0.0
         var regionLong = 0.0
