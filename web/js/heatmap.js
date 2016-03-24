@@ -2,10 +2,11 @@
  * heatmap.js v2.0.2 | JavaScript Heatmap Library
  *
  * Copyright 2008-2016 Patrick Wied <heatmapjs@patrick-wied.at> - All rights reserved.
- * Dual licensed under MIT and Beerware license 
+ * Dual licensed under MIT and Beerware license
  *
  * :: 2016-02-04 21:25
  */
+
 (function (a, b, c) {
     if (typeof module !== "undefined" && module.exports) {
         module.exports = c()
@@ -14,15 +15,16 @@
     } else {
         b[a] = c()
     }
-})("h337", this, function () {
+})
+("h337", this, function () {
     var a = {
         defaultRadius: 40,
         defaultRenderer: "canvas2d",
-        defaultGradient: {.25: "rgb(0,0,255)", .55: "rgb(0,255,0)", .85: "yellow", 1: "rgb(255,0,0)"
+        defaultGradient: {.45: "rgb(0,47,255)", .5: "rgb(255,255,255)", .7: "yellow", 1: "rgb(255,0,0)"
         },
         defaultMaxOpacity: 1,
         defaultMinOpacity: 0,
-        defaultBlur: .85,
+        defaultBlur: .0,
         defaultXField: "x",
         defaultYField: "y",
         defaultValueField: "value",
@@ -190,10 +192,11 @@
             var d = c.getContext("2d");
             var e = a;
             var f = a;
-            c.width = c.height = a * 2;
+            c.width = a * 2;
+            c.height = a * 2;
             if (b == 1) {
                 d.beginPath();
-                d.arc(e, f, a, 0, 2 * Math.PI, false);
+                d.rect(0,0,2*a,2*a);
                 d.fillStyle = "rgba(0,0,0,1)";
                 d.fill()
             } else {
@@ -550,3 +553,4 @@
     };
     return g
 });
+

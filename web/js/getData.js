@@ -1,27 +1,21 @@
- var mapPos = [];
  var heatmapIntensity = 10;
- var min = 1000;
- var max = -1000;
 
- var testData = {
-     max: heatmapIntensity,
-     data: []
- }
-
- function getData(year1, year2) {
-     min = 1000;
-     max = -1000;
-     console.log("getting data");
-     loadJSON(year2 + '.json',
+ function getData(year1, year2, metric) {
+    mapPos = {}
+     testData = {
+        max: heatmapIntensity,
+        data: []
+     }
+     var folder = null;
+     if(metric === "avgTemp" || metric === "stddev") folder = "avgs"
+     if(metric === "minTemp" || metric === "maxTemp") folder = "minmax"
+     loadJSON("results/"+folder+"/"+year2 + '.json', //second year data loading
          function (data) {
-             fillData(data);
-             loadJSON(year1 + ".json",
+             fillData(data,mapPos,metric);
+             loadJSON("results/"+folder+"/"+year1 + ".json",  //first year data loading
                  function (data2) {
-                     calculateDifference(data2);
-                     insertData(testData);
-
-                     console.log("finish");
-
+                     calculateDifference(data2,mapPos,testData,metric); //compute differences
+                     insertData(testData); //inserts the data in the heatmap
                  },
                  function (xhr) {
                      console.error(xhr);
@@ -35,65 +29,42 @@
      );
  }
 
- function fillData(data) {
+ function fillData(data,mapPos,metric) {
      data.results.forEach(function (res) {
-
-         mapPos[{
-             lat: res.latitude,
-             lng: res.longitude
-         }] = res.avgTemp;
-         //testData.data.push({lat: res.latitude, lng:res.longitude, count: res.avgTemp})
+         mapPos[res.lat +"_" + res.long] = res[metric];
      });
  }
 
- function calculateDifference(data2) {
+ function calculateDifference(data2,mapPos,testData,metric) {
      data2.results.forEach(function (res) {
-         if (mapPos[{
-                 lat: res.latitude,
-                 lng: res.longitude
-             }] !== "undefined") {
-             var diff = difference(mapPos[{
-                 lat: res.latitude,
-                 lng: res.longitude
-             }], res.avgTemp);
-             if (diff > max) {
-
-                 max = diff;
-                 console.log("max" + max);
-                 console.log(mapPos[{
-                     lat: res.latitude,
-                     lng: res.longitude
-                 }] + "  " + res.avgTemp);
-             }
-             if (diff < min) {
-                 min = diff;
-             }
+         if (mapPos[res.lat +"_" + res.long] !== undefined) {
+             var diff = difference(mapPos[res.lat +"_" + res.long], res[metric]);
              //repeated for each region
              testData.data.push({
-                 lat: res.latitude,
-                 lng: res.longitude,
+                 lat: res.lat,
+                 lng: res.long,
                  temp: diff
              });
          }
      });
-
-     min = Math.abs(min);
-     max = Math.abs(max);
-     max = max + min;
-     //console.log("min" + min + "  max:" + max);
+     //calculating the value to insert in the heatmap for each single data
+     //the values are between [0,10]
+     //if the difference is >= than 2.5 then it will have value 10
+     //The code is a bit weird in order to create the values for the gradient used in the heatmap
      testData.data.forEach(function (res) {
-         res.temp = ((res.temp + min) * heatmapIntensity) / max;
-         console.log("temp" + res.temp);
+        var old = res.temp
+        res.temp =  5 + res.temp*2
+        if(res.temp > 10) res.temp = 10
+        if(res.temp < 0) res.temp = 0
+        if(res.temp < 4.5){
+            var a =res.temp - 2.25
+            res.temp = 2.25-a
+        }
      });
-     /*
-     testData.data.forEach(function (res) {
-         //console.log(res.temp);
-     });*/
-
  }
 
  function difference(num1, num2) {
-     return (num1 > num2) ? num1 - num2 : num2 - num1
+     return num1 - num2
  }
 
  function loadJSON(path, success, error) {
@@ -109,6 +80,6 @@
              }
          }
      };
-     xhr.open("GET", path, true);
+     xhr.open("GET", path, false);
      xhr.send();
  }
