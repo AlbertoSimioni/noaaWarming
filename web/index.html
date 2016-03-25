@@ -32,7 +32,7 @@
       max: 22,
       values: [ 21, 22 ],
       slide: function( event, ui ) {
-        if(ui.values[1] -ui.values[0] == 0){console.log("MADDDDONNAA"); return false}
+        if(ui.values[1] -ui.values[0] == 0){ return false}
         var first1 = 1901+ui.values[0]*5
         var first2 = 1901+ui.values[0]*5+4
         var second1 = 1901+ui.values[1]*5
