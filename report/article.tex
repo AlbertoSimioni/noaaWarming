@@ -69,8 +69,8 @@
 %
 % 1st. author
 \alignauthor Alberto Simioni\\
-       \affaddr{number}\\
-       \email{mail}
+       \affaddr{\texttt{2577392}}\\
+       \email{\texttt{a.s.simioni@student.vu.nl}}
 % 2nd. author
 \alignauthor Federico Ziliotto\\
        \affaddr{\texttt{2577394}}\\
@@ -125,7 +125,11 @@ Each measurement comes in a form similar to what \ref{fig:data} shows. The infor
 
 \subsection{Temperature data quality}
 \label{sec:filter}
-Before using the actual temperature data, we filtered it through a custom quality check. Each measurement come with a quality flag set at a different value depending on how reliable the measurement was\cite{noaaDataFormat}. In particular we accepted all the measurement with the following quality code value:
+Before using the actual temperature data, we filtered it through a custom quality check. Each measurement come with a quality flag set at a different value depending on how reliable the measurement was\cite{noaaDataFormat}.
+It is important to use this flag to remove wrong data in the dataset, as reported in the a document provided by NOAA that describes the problem inside the dataset \cite{noaaProblems}. ``Various, mostly random errors, are present in the overall dataset, and these are being documented and scheduled for correction. Quality control of the data
+(which has already taken place and reflected in the online data) has corrected
+well over 99 percent of the errors present in the original data prior to the quality control.''
+In particular we accepted all the measurement with the following quality code value:
 \begin{itemize}
     \item 0: Passed gross limits check;
     \item 1: Passed all quality control checks;
@@ -174,12 +178,14 @@ The technological environment we decided to use for this project consist of:
 \label{fig:dataSize}
 \end{figure}
 
-The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrusher\footnote{\href{Hadoop Filecrusher}{https://github.com/edwardcapriolo/filecrush}}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time per each folder of the data. The number of total files was reduced by an order of magnitude of {10^2}.\\
+The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrusher\footnote{\href{Hadoop Filecrusher}{https://github.com/edwardcapriolo/filecrush}}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time per each folder of the data. The number of total files was reduced by an order of magnitude of $10^2$.\\
 
 \textbf{Spark}
 The choice of this technology is motivated by size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. \\
 The second advantage is that we would like to make multiple transformations to the data and Spark allows to easily cache the intermediate results to be reused efficiently. In this way, there is no need continuously store the results and load them to be reused for the next MapReduce operation. One example is calculating the large region averages, for which we make use of the intermediate results of the worldwide regions (each one of equal size) analysis\ref{fig:analysis}. The caching feature is used multiple times throughout the execution and drastically improve the performance. \\
 
+\textbf{SURFsara Hadoop cluster}
+All the computation are executed on the SURFsara Hadoop cluster \footnote{\href{SURFsara Hadoop Cluster}{https://userinfo.surfsara.nl/systems/hadoop}} . The cluster is one of the largest Hadoop clusters for scientific research in the Netherlands. It is composed of 170 data/compute nodes with a total 1370 CPU-cores for parallel processing. The system has also a distributed file system that has a capacity of 2.3 PB. The cluster is shared and used by different users that needs an HPC infrastructure for their research.   
 
 \section{Experiments}
 \label{sec:exp}
@@ -210,6 +216,10 @@ Our analysis proceeded by loading five consecutive years of measurements at a ti
 \subsection{Median}
 Another value we wanted to extract from the datasets is the median. We implemented the code to calculate it, but we didn't have enough time to test it and obtain the results for all the datasets. The problem with calculating the median is that it is not a commutative and associative operation (the median of medians is not the median of the entire group). This means that there is no easy way to use the reduce function to combine results computed in different machines in a distributed way. The simple way to calculate the median is to sort the desired data and look at the value in the middle. The problem with this solution is that it's not scalable. Indeed, applied to datasets in the order of GB in sizes this operation is very slow. Work has been done by various researchers to tackle this kind of problems and improve the efficiency of non associative operations (\cite{liu2009computing}).
 
+\subsection{Results format}
+The results computed by the program we developed with Spark are stored in HDFS with the CSV format. The results are stored in multiple HDFS folders, one per each year. Inside each folder there are multiple CSV files with portions of the yearly results. To collect the results from HDFS and compact them we developed a script that merges the files in each folder in two CSV files per each year. One file contains the minimum and the maximum temperature for each latitude and longitude quadrant. The other file contains the value of the average and of the standard deviation of the temperature.
+The script, in addition to the two CSV files, creates two JSON files with the same information. Those files will simplify the parsing of the data in the graphical user interface that is developed with javascript. 
+\\ The results of the zonal analysis are stored in one single CSV file per each zone containing one row per each year. With this format it is easy to create some charts about the change of the temperature for that zone during the years.
 
 
 \subsection{Temperature yearly trends analysis}
@@ -226,8 +236,18 @@ For each region we calculated minimum, maximum, average and standard deviation o
 In this section we report the results obtained from the analysis described in section \ref{sec:exp}. 
 
 \subsection{Interactive map}
+\label{sec:map}
 The first tool we worked on is a dynamic map that allows to visualize the difference between temperature values (average, maximum, minimum and standard deviation) between two datasets. Each dataset is created from the analysis one described in section \ref{sec:exp} and are composed of the aggregated results of the five yearly analysis in which we divided the surface in small regions of 1\degree latitude and 1\degree longitude. \\
-We used the map provided by Google\footnote{\href{Google Maps}{https://developers.google.com/maps/}}. We created a custom heatmap that shows on each region of the map different colors to show an increase or decrease for a particular value in that region (shades of blue for reduction and red for a gain). 
+We used the map provided by Google\footnote{\href{Google Maps}{https://developers.google.com/maps/}}. We created a custom heatmap that shows on each region of the map different colors to show an increase or decrease for a particular value in that region (shades of blue for reduction and red for a gain). The interface can be seen in figure \ref{fig:interface}
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{interface}
+\caption{Interactive map interface example}
+\label{fig:interface}
+\end{figure}
+
+In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squared in the map. \\
+In the interface there is also the possibility to change the temperature metric that is used to compared the two set of results.
 
 \subsection{Zonal Analysis}
 In this section we report the results of the regional analysis done for: Europe, United States and Australia. We start considering the amount of data available from each region for each year. 

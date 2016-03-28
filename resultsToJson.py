@@ -1,4 +1,5 @@
-#to run the script type on the shell: python resultsToJson.py
+#The script collects the results stored in HDFS and creates a folder with
+#the result both saved in JSON and CSV format
 import csv
 import json
 import sys
@@ -21,7 +22,6 @@ for i in range(0,23): #0,23
     jsonf.write(data)
     f.close()
     jsonf.close()
-    #os.remove("avgs/"+currYearsString+'.csv')
 
 
     fieldnames=["lat","long","minTemp","maxTemp"]
@@ -32,4 +32,3 @@ for i in range(0,23): #0,23
     jsonf.write(data)
     f.close()
     jsonf.close()
-    #os.remove("minmax/"+currYearsString+'.csv')
