@@ -138,7 +138,7 @@ Each measurement comes in a form similar to what \ref{fig:data} shows. The infor
 \subsection{Temperature data quality}
 \label{sec:filter}
 Before using the actual temperature data, we filtered it through a custom quality check. Each measurement come with a quality flag set at a different value depending on how reliable the measurement was\cite{noaaDataFormat}.
-It is important to use this flag to remove wrong data in the dataset, as reported in the a document provided by NOAA that describes the problem inside the dataset \cite{noaaProblems}: ``Various, mostly random errors, are present in the overall dataset, and these are being documented and scheduled for correction. Quality control of the data
+It is important to use this flag to remove wrong data in the dataset, as reported in the document provided by NOAA that describes the problem inside the dataset \cite{noaaProblems}: ``Various, mostly random errors, are present in the overall dataset, and these are being documented and scheduled for correction. Quality control of the data
 (which has already taken place and reflected in the online data) has corrected
 well over 99 percent of the errors present in the original data prior to the quality control.''
 In particular we accepted all the measurement with the following quality code value:
@@ -190,7 +190,7 @@ The technological environment we decided to use for this project consist of:
 \label{fig:dataSize}
 \end{figure}
 
-The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrush\cite{filecrush}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time per each folder of the data. The number of total files was reduced by an order of magnitude of $10^2$.\\
+The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrush\cite{filecrush}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time for each folder of the data. The number of total files was reduced by an order of magnitude of $10^2$.\\
 
 \textbf{Spark}
 The choice of this technology is motivated by size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. \\
@@ -249,7 +249,7 @@ For each region we calculated minimum, maximum, average and standard deviation o
 The chart in figure \ref{fig:stationsRegion} shows the surface coverage of the selected regions for each year from the data we analyzed. As we can see, we don't have data from every part of the regions, with Europe and US the more covered ones (with peaks of 70\% and 60\%). The are two main reason behind this:
 \begin{itemize}
     \item In the chart we took into account the number of regions for which we have data on the total amount of regions in the area. With a different selection of region size we could increase or decrease the total coverage (at the expense of precision).
-    \item There may be areas in the regions where it's more difficult to have an uniform stations coverage because of geomorphological reasons. For instance, there are far less regions covered in the middle part of Australia due to its desert climate, that makes it more difficult to install, maintain and monitor the stations.
+    \item There may be areas in the regions where it's more difficult to have a uniform stations coverage because of geomorphological reasons. For instance, there are far less regions covered in the middle part of Australia due to its desert climate, which makes it more difficult to install, maintain and monitor the stations.
 \end{itemize}
 
 
@@ -277,7 +277,7 @@ We used the map provided by Google\cite{maps}. We created a custom heatmap that 
 \label{fig:interface}
 \end{figure}
 
-In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squares in the map. In the interface there is also the possibility to change the temperature metric that is used to compared the two set of results.\\
+In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squares in the map. In the interface there is also the possibility to change the temperature metric that is used to compare the two set of results.\\
 One problem of the interface is that the colored squares used in the map should change their height depending on the latitude value where they are positioned because the map projection isn't equiareal. The consequence in the heatmap visualization is that there is some empty space between the squares of a certain latitude value and the squares with the value of the latitude increased or decreased by one. This aspect makes the heatmap looks like as it is missing some data for certain latitude when instead the data are present, just the squares should be rectangles with a bigger height value.\\
 
 By using the interactive map it is possible to notice an increase of the global temperature in the years from 1975 to the current years. In figure \ref{img:increaseMap} it is possible to see an example of increase of the average temperature between the two interval 1976/1980 to 2011/2015 in Europe and in Asia. The red colors are dominant in all the figure. Showing an increase of at least 2.5 degrees for all the regions that have a red square over them.
@@ -286,13 +286,13 @@ In figure \ref{img:increaseGlobal} it is possible to see how the minimum tempera
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{increaseEurope}
 \caption{Map that shows the increase of the average temperature in Europe and in Asia between 1976 and 2015.}
-\label{fig:interface}
+\label{img:increaseMap}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{increaseGlobal}
 \caption{Map that shows the increase of the minimum temperature globally between 1976 and 2015.}
-\label{fig:interface}
+\label{img:increaseGlobal}
 \end{figure}
 
 \subsection{Zonal Analysis}
@@ -340,12 +340,12 @@ For the Australia data the most interesting fact we notice is a sudden plunge in
 
 \subsubsection{Standard Deviation analysis}
 \begin{figure}[tbh]
+\label{fig:stdev}
 \includegraphics[width=1\linewidth]{stdev}
 \caption{Standard deviation for Average, Minimum and Maximum values per region.}
-\label{fig:stdev}
 \end{figure}
 In figure \ref{fig:stdev} we plotted the value of the standard deviation per statistics and per region. It's clear that the values of maximum and minimum have larger fluctuation than the average. This may be caused by one or a few erroneous data report caused by environmental accidents. Interesting to note that the minimum value have a way larger standard deviation that the maximum. By correlating this with the stations distribution we came to the conclusion that this is caused by the installation of new stations in more remote and difficult to access regions (e.g. Arctic ocean and mountain regions). \\
-Moreover, the minimum standard deviation for the Australian region was suspect, because the lowest temperature registered for the region is -23.4\degree C\cite{ausTemp}, so it's difficult to expect a standard deviation similar to that of the European region or even higher that that of the American one. After analyzing the data we found out erroneous data coming from the south east region of Australia reporting temperature of around -70\degree C.
+Moreover, the minimum standard deviation for the Australian region was suspect, because the lowest temperature registered for the region is -23.4\degree C\cite{ausTemp}, so it's difficult to expect a standard deviation similar to that of the European region or even higher than that of the American one. After analyzing the data we found out erroneous data coming from the south east region of Australia reporting temperature of around -70\degree C.
 
 \FloatBarrier
 
@@ -355,7 +355,7 @@ Before answering the question we asked earlier we will take a brief general over
 We are overall satisfied with the performance of the program developed with Spark for analyzing the data. The program is able to analyze the entire dataset in approximately 8 hours. The program is also scalable to the data size. Future data in the next years will probably grow in dimensions, Spark can automatically handle new resources available in the cluster if there is the need. Furthermore the structure of the program allows also to manage the growth of the data by computing some intermediate results on the yearly data. The five year analysis is performed only on these intermediate results that are way smaller than the initial data. This feature removes the need to join all the data of the five years.\\
 Other two aspect that improve the performance are the step we performed to group the big amount of files, and the caching of the data after the operations of parsing, filtering and grouping. The first improvement makes HDFS to be faster because it performs much better with a smaller amount of bigger files. The second improvement allows to compute different analysis on the same data without redoing some computation that are needed in the different types of analysis.\\
 
-For what concerns the metrics used for analyzing the data, the average temperature is the most useful metric. It shows clearly the increase of the temperature in different periods and it's stable also if some particular events happen in short periods of the year. Minimum and maximum temperature are more susceptible to those events and indeed they show less clearly the increase of the temperature in the periods where the average metric reveals the increase. The standard deviation metric is useful to understand if there are errors in the data or if the data are not uniformly distributed (e.g. when the distributions of the stations is changed during the five year of the grouped results then the standard deviation results higher).
+For what concerns the metrics used for analyzing the data, the average temperature is the most useful metric. It shows clearly the increase of the temperature in different periods. Also, it's stable even if some particular events happen in short periods of the year. Minimum and maximum temperature are more susceptible to those events and indeed they show less clearly the increase of the temperature in the periods where the average metric reveals the increase. The standard deviation metric is useful to understand if there are errors in the data or if the data are not uniformly distributed (e.g. when the distributions of the stations is changed during the five year of the grouped results then the standard deviation results higher).
 
 \subsection{Global Warming remarks}
 From the worldwide analysis and using the interactive map, it appears that a clear temperature increase is in place around the world. Moreover, we notice this phenomenon occurring even considering specific large regions of earth where two out of three show a clear temperature increase trend for the last 30 years, which is in accordance with the data reported by independent researches\cite{hansen2006global}. \\
@@ -377,43 +377,43 @@ Here is an overview of the stations for some selected years. We decided to show 
 \begin{figure}[tbh]
 
 \includegraphics[width=1\linewidth]{stations1907}
-\caption{Wheater stations used in 1907. In the first years we only have measurements coming from stations in Finland}
+\caption{Weather stations used in 1907. In the first years we only have measurements coming from stations in Finland}
 \label{fig:stations1907}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1930}
-\caption{Wheater stations used in 1930. Here we can see the stations cover the most part of central Europe. The problem we encountered is that there is no continuity in the stations that are used between consecutive years, so it's difficult to make comparisons.}
+\caption{Weather stations used in 1930. Here we can see the stations cover the most part of central Europe. The problem we encountered is that there is no continuity in the stations that are used between consecutive years, so it's difficult to make comparisons.}
 \label{fig:stations1930}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1945}
-\caption{Wheater stations used in 1945. Around this year we start to have a relevant number of stations that cover most part of the surface.}
+\caption{Weather stations used in 1945. Around this year we start to have a relevant number of stations that cover most part of the surface.}
 \label{fig:stations1945}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1968}
-\caption{Wheater stations used in 1968. In the late 60s we notice a sudden drop in the earth coverage compared to the previous years. We took this into account when making the analysis.}
+\caption{Weather stations used in 1968. In the late 60s we notice a sudden drop in the earth coverage compared to the previous years. We took this into account when making the analysis.}
 \label{fig:stations1968}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1972}
-\caption{Wheater stations used in 1972. As shown in figure \ref{fig:stations}, we noticed a sudden drop in the number of stations for this year. In particular we observe the absence of stations from east Europe and the ex Soviet Union Area.}
+\caption{Weather stations used in 1972. As shown in figure \ref{fig:stations}, we noticed a sudden drop in the number of stations for this year. In particular we observe the absence of stations from east Europe and the ex Soviet Union Area.}
 \label{fig:stations1972}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1980}
-\caption{Wheater stations used in 1980. From this year onwards we have a large number of stations covering most part of the surface.}
+\caption{Weather stations used in 1980. From this year onwards we have a large number of stations covering most part of the surface.}
 \label{fig:stations1980}
 \end{figure}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations2014}
-\caption{Wheater stations used in 2014.}
+\caption{Weather stations used in 2014.}
 \label{fig:stations2014}
 \end{figure}
 
