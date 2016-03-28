@@ -105,7 +105,7 @@ Research done on the temperature changes in the last century in the U.S. shows t
 \section{Research Question}
 \label{sec:question}
 Our aim is to update the recent work done in the climate analysis with the new data available. We will first analyze the structure and characteristics of the data provided by the NOAA organization.
-The data have a very important size and furthermore the data are continuously growing in size also in the last years. So one important question is \textbf{how to efficiently perform global analysis on huge wheater data?} We will perform the analysis utilizing distributed computing and study the advantages and disadvantages of this technology.\\
+The data have a very important size and furthermore the data are continuously growing in size also in the last years. So one important question is \textbf{how to efficiently perform global analysis on huge weather data?} We will perform the analysis utilizing distributed computing and study the advantages and disadvantages of this technology.\\
 Then we are going to perform different analysis on the temperature data and compare the results with the ones found in literature. So it's important to find \textbf{which are the metrics that show better a change in the temperature?} In the end, we will make an evaluation on the threat of global warming based on the results we obtained, examining the utility of the selected metrics. \\
 
 
@@ -316,6 +316,16 @@ The EU chart shows, starting from the late 70s, a pretty clear trend of temperat
 
 For the Australia data the most interesting fact we notice is a sudden plunge in the temperature during the 80s. This can be explained by looking at the stations number chart for that region, that manifest a decrease for the same period of time. As for the European situation, we can see a slight increase in the average temperature, that is confirmed by the results of other studies, that shows an increase of the average temperature for the Australian continent of about 0.8\degree. 
 
+\subsubsection{Standard Deviation analysis}
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{stdev}
+\caption{Standard deviation for Average, Minimum and Maximum values per region.}
+\label{fig:stdev}
+\end{figure}
+In figure \ref{fig:stdev} we plotted the value of the standard deviation per statistics and per region. It's clear that the values of maximum and minimum have larger fluctuation than the average. This may be caused by one or a few erroneous data report caused by environmental accidents. Interesting to note that the minimum value have a way larger standard deviation that the maximum. By correlating this with the stations distribution we came to the conclusion that this is caused by the installation of new stations in more remote and difficult to access regions (e.g. Arctic ocean and mountain regions). \\
+Moreover, the minimum standard deviation for the Australian region was suspect, because the lowest temperature registered for the region is -23.4\degree C\cite{ausTemp}, so it's difficult to expect a standard deviation similar to that of the European region or even higher that that of the American one. After analyzing the data we found out erroneous data coming from the south east region of Australia reporting temperature of around -70\degree C.
+
+
 \section{Conclusions}
 \label{sec:con}
 Before answering the question we asked earlier we will take a brief general overview of the characteristics of this project. One of the main problem we encountered is the limited (if not absence) of documentation describing the data. Especially for the older datasets we had to directly analyze the data to know the origin (region on earth) or the time coverage (day/night reports, coverage of all months). Moreover, we had to take into account during the analysis and the result discussion the anomalies we discovered in the station number charts (\ref{App:AppendixA}). Without a uniform and well formed source it's more difficult to extract reliable statistics.\\
@@ -323,6 +333,19 @@ We are overall satisfied with the performance of the program developed with Spar
 Other two aspect that improve the performance are the step we performed to group the big amount of files, and the caching of the data after the operations of parsing, filtering and grouping. The first improvement makes HDFS to be faster because it performs much better with a smaller amount of bigger files. The second improvement allows to compute different analysis on the same data without redoing some computation that are needed in the different types of analysis.\\
 
 For what concerns the metrics used for analyzing the data, the average temperature is the most useful metric. It shows clearly the increase of the temperature in different periods and it's stable also if some particular events happen in short periods of the year. Minimum and maximum temperature are more susceptible to those events and indeed they show less clearly the increase of the temperature in the periods where the average metric reveals the increase. The standard deviation metric is useful to understand if there are errors in the data or if the data are not uniformly distributed (e.g. when the distributions of the stations is changed during the five year of the grouped results then the standard deviation results higher).
+
+\subsection{Global Warming remarks}
+From the worldwide analysis and using the interactive map, it appears that a clear temperature increase is in place around the world. Moreover, we notice this phenomenon occurring even considering specific large regions of earth where two out of three show a clear temperature increase trend for the last 30 years, which is in accordance with the data reported by independent researches\cite{hansen2006global}. \\
+What we miss in the picture is the data coming from most of the oceanic areas and in general ocean temperatures. The only sources we had that covered large part of the oceans were coming from mobile stations installed on ships. The problem with this data was dual: many times we had the results (average, minimum and maximum) for a region constituted by only one station report. In the end we excluded these from the analysis because they skewed the results in an unpredictable way.
+
+
+\subsection{Future Improvements}
+Due to the limited amount of time available, there are many improvements to the analysis and other research path to discover for a better understanding of the dataset and the global warming phenomenon. \\
+To improve the data quality we could divide the temperature data by time of day. We assumed that all the station have a similar behavior (they collect temperature samples every fixed amount of time). Without this assumption the average temperature result could lean towards lower or higher temperatures depending on which the hours for which we have more data.\\
+Another interesting analysis that can be performed is dividing the regions by latitude bands. We expect that regions in the same latitude have lower differences in temperature so we could expect a more stable average temperature and less fluctuations in minimum/maximum values. The same reasoning can be done for seasons. In particular it would be particularly interesting to see the temperature changes by season for a fixed region and compare the season analysis (e.g. see if all seasons show the same curve or not).\\ 
+An intriguing data source we had available but didn't use yet is the Arctic ice surface coverage. Since this is directly correlated with global temperature and is also one of the most monitored metric in recent years (due to its effects on the ecosystem), we think it can help in strengthening our conclusions. We didn't investigate further this path because our understanding of the data sources was limited and required more time than we expected to interpret correctly the data.
+
+
 
 \newpage
 \appendix
