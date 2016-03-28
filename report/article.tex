@@ -104,7 +104,9 @@ Research done on the temperature changes in the last century in the U.S. shows t
 
 \section{Research Question}
 \label{sec:question}
-Our aim is to update the recent work done in the climate analysis with the new data available. We will first analyze the structure and characteristics of the data provided by the NOAA organization. Then we are going to perform different analysis on the temperature data and compare the results with the ones found in literature.  Moreover we will perform the analysis utilizing distributed computing and study the advantages and disadvantages of this technology. In the end, we will make an evaluation on the threat of global warming based on the results we obtained. \\
+Our aim is to update the recent work done in the climate analysis with the new data available. We will first analyze the structure and characteristics of the data provided by the NOAA organization.
+The data have a very important size and furthermore the data are continuously growing in size also in the last years. So one important question is \textbf{how to efficiently perform global analysis on huge wheater data?} We will perform the analysis utilizing distributed computing and study the advantages and disadvantages of this technology.\\
+Then we are going to perform different analysis on the temperature data and compare the results with the ones found in literature. So it's important to find \textbf{which are the metrics that show better a change in the temperature?} In the end, we will make an evaluation on the threat of global warming based on the results we obtained, examining the utility of the selected metrics. \\
 
 
 \section{Project setup}
@@ -246,8 +248,8 @@ We used the map provided by Google\footnote{\href{Google Maps}{https://developer
 \label{fig:interface}
 \end{figure}
 
-In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squared in the map. \\
-In the interface there is also the possibility to change the temperature metric that is used to compared the two set of results.
+In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squares in the map. In the interface there is also the possibility to change the temperature metric that is used to compared the two set of results.\\
+One problem of the interface is that the colored squares used in the map should change their height depending on the latitude value where they are positioned because the map projection isn't equiareal. The consequence in the heatmap visualization is that there is some empty space between the squares of a certain latitude value and the squares with the value of the latitude increased or decreased by one. This aspect makes the heatmap looks like as it is missing some data for certain latitude when instead the data are present, just the squares should be rectangles with a bigger height value.
 
 \subsection{Zonal Analysis}
 In this section we report the results of the regional analysis done for: Europe, United States and Australia. We start considering the amount of data available from each region for each year. 
@@ -318,37 +320,37 @@ Here is an overview of the stations for some selected years. We decided to show 
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1907}
-\caption{In the first years we only have measurements coming from stations in Finland}
+\caption{Wheater stations used in 1907. In the first years we only have measurements coming from stations in Finland}
 \label{fig:stations1907}
 \end{figure}
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1930}
-\caption{Here we can see the stations cover the most part of central Europe. The problem we encountered is that there is no continuity in the stations that are used between consecutive years, so it's difficult to make comparisons.}
+\caption{Wheater stations used in 1930. Here we can see the stations cover the most part of central Europe. The problem we encountered is that there is no continuity in the stations that are used between consecutive years, so it's difficult to make comparisons.}
 \label{fig:stations1930}
 \end{figure}
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1945}
-\caption{Around this year we start to have a relevant number of stations that cover most part of the surface.}
+\caption{Wheater stations used in 1945. Around this year we start to have a relevant number of stations that cover most part of the surface.}
 \label{fig:stations1945}
 \end{figure}
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1968}
-\caption{In the late 60s we notice a sudden drop in the earth coverage compared to the previous years. We took this into account when making the analysis.}
+\caption{Wheater stations used in 1968. In the late 60s we notice a sudden drop in the earth coverage compared to the previous years. We took this into account when making the analysis.}
 \label{fig:stations1968}
 \end{figure}
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1972}
-\caption{As shown in figure \ref{fig:stations}, we noticed a sudden drop in the number of stations for this year. In particular we observe the absence of stations from east Europe and the ex Soviet Union Area.}
+\caption{Wheater stations used in 1972. As shown in figure \ref{fig:stations}, we noticed a sudden drop in the number of stations for this year. In particular we observe the absence of stations from east Europe and the ex Soviet Union Area.}
 \label{fig:stations1972}
 \end{figure}
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1980}
-\caption{From this year onwards we have a large number of stations covering most part of the surface.}
+\caption{Wheater stations used in 1980. From this year onwards we have a large number of stations covering most part of the surface.}
 \label{fig:stations1980}
 \end{figure}
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations2014}
-\caption{Measurement format}
+\caption{Wheater stations used in 2014.}
 \label{fig:stations2014}
 \end{figure}
 
