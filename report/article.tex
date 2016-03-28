@@ -10,6 +10,13 @@
 \usepackage{gensymb}
 \usepackage{textcomp}
 \usepackage{siunitx}
+\usepackage{placeins}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+ \usepackage[backend=bibtex]{biblatex}
+
+
+\bibliography{vldb_sample}  % vldb_sample.bib is the name of the Bibliography in this case
 
 \usepackage[bottom]{footmisc}
 
@@ -91,16 +98,18 @@
 Global warming is an open topic of discussion today. While climate scientist debate on the causes of the gradual temperature rise in the past 50 years (the majority claim the increase of CO2 due to fossil fuel is to blame, other researchers found alternative explanations, like non CO2 greenhouse gases (GHGs) \cite{hansen2000global}), data scientist had access to ever increasing technologies and data sources to study the phenomenon. Whatever the causes, the data collected by different organizations and from different parts of the world all agree that the global temperature in the world is rising \cite{hansen2006global}. We show that this trend is not only real, but the temperature increase is accelerating in the last twenty years at a worrisome rate. We aim to update the results obtained by other institutions with the more recent data, and to do that we want to use more flexible and powerful tools. With the use of distributed computing technologies (like the Hadoop file system and the Spark programming framework) we want to show the capabilities but also the limitations of this new technologies applied in large scale computing. Moreover, we created an interactive tool that may help researchers to visualize the enormous amount of climate data that was collected in the past century and detect possible global warming causes and effects.
 
 \subsection{Data Sources}
-We have access to more than one hundred years of weather data provided by the NOAA (National Oceanic and Atmospheric Administration) organization. The raw data is publicly accessible\footnote{\href{ftp://ftp.ncdc.noaa.gov/pub/data/noaa/}{Noaa public data}}, so anyone interested in analyzing the climate of the past years can use them. The data is organized by year and grouped by ISD (Integrated Surface Data) stations. They also provide a \texttt{perl} script that helps in reading and viewing the data. NOAA also publishes monthly reports on the climate status (like temperature, precipitation, sea level) and compares the data obtained for the last month/year to the averages calculated in the past, accompanied by a software suite to repeat or modify the analysis at home. While this tools and datasets are helpful, there are currently no publicly available tools to perform custom data analysis on the whole raw dataset available. In particular, considering the size of the uncompressed data (\~205 GB) it may be necessary to use a cluster to make complex computations that require more time. \\
-
+We have access to more than one hundred years of weather data provided by the NOAA (National Oceanic and Atmospheric Administration) organization. The raw data is publicly accessible\cite{noaa}, so anyone interested in analyzing the climate of the past years can use them. The data is organized by year and grouped by ISD (Integrated Surface Data) stations. They also provide a \texttt{perl} script that helps in reading and viewing the data. NOAA also publishes monthly reports on the climate status (like temperature, precipitation, sea level) and compares the data obtained for the last month/year to the averages calculated in the past, accompanied by a software suite to repeat or modify the analysis at home. While this tools and datasets are helpful, there are currently no publicly available tools to perform custom data analysis on the whole raw dataset available. In particular, considering the size of the uncompressed data (\~205 GB) it may be necessary to use a cluster to make complex computations that require more time. \\
 
 In the following sections we first describe the context of our work and the related literature in section \ref{sec:rel}, the purpose of the research (\ref{sec:question}), then we explain the environment we worked with in section \ref{sec:pro} and the experiments we performed (\ref{sec:exp}). In section \ref{sec:res} we show the results we obtained and discuss them and finally in section \ref{sec:con} we argue the relevance of our results and future improvements.
 
+\FloatBarrier
 
 \section{Related Work}
 \label{sec:rel}
 Studies on global and regional surface temperature change has been done in past. Researchers showed that the rate of temperature increase has been higher in the last quarter of the century that it has been in the previous years of the 20\^{th} century. Moreover they calculated an increase in the average global five year mean of about 1\celsius~\cite{hansen1999giss}. This recent trend is particularly important if we consider the temperature changes in the past millennium, and can be considered an unprecedented anomaly\cite{mann1999northern}. More recent studies also show that the mean annual temperature has not risen in the last twenty years, despite the continuous increase of GHGs in the atmosphere\cite{kosaka2013recent}. This suggests that either the global warming phenomenon that was registered in the period 1975-2000 had different causes or that the more recent stable trend has an origin that balance the greenhouse effects.
 Research done on the temperature changes in the last century in the U.S. shows that the yearly mean trend is slightly different than the worldwide one. Indeed, we in the U.S., temperature somewhat decreased from 1930 to 1980, and a warming trend has returned only in the last decades of the century\cite{hansen1999giss}.  
+
+\FloatBarrier
 
 \section{Research Question}
 \label{sec:question}
@@ -108,6 +117,7 @@ Our aim is to update the recent work done in the climate analysis with the new d
 The data have a very important size and furthermore the data are continuously growing in size also in the last years. So one important question is \textbf{how to efficiently perform global analysis on huge weather data?} We will perform the analysis utilizing distributed computing and study the advantages and disadvantages of this technology.\\
 Then we are going to perform different analysis on the temperature data and compare the results with the ones found in literature. So it's important to find \textbf{which are the metrics that show better a change in the temperature?} In the end, we will make an evaluation on the threat of global warming based on the results we obtained, examining the utility of the selected metrics. \\
 
+\FloatBarrier
 
 \section{Project setup}
 \label{sec:pro}
@@ -168,8 +178,8 @@ The important things to consider before proceeding with the analysis are:
 \subsection{Data Analysis Environment}
 The technological environment we decided to use for this project consist of:
 \begin{itemize}
-    \item \textbf{HDFS}\footnote{\href{Hadoop Distributed File System}{http://hadoop.apache.org/}}: a distributed file system that allows the developers to store and retrieve large quantity of data between multiple machines as if it was a single one;
-    \item \textbf{Spark}\footnote{\href{Apache Spark}{http://spark.apache.org/}}: programming framework to develop applications for large scale data processing on horizontally scalable clusters.
+    \item \textbf{HDFS}\cite{hadoop}: a distributed file system that allows the developers to store and retrieve large quantity of data between multiple machines as if it was a single one;
+    \item \textbf{Spark}\cite{spark}: programming framework to develop applications for large scale data processing on horizontally scalable clusters.
 \end{itemize}
 
 \textbf{HDFS}
@@ -180,14 +190,16 @@ The technological environment we decided to use for this project consist of:
 \label{fig:dataSize}
 \end{figure}
 
-The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrusher\footnote{\href{Hadoop Filecrusher}{https://github.com/edwardcapriolo/filecrush}}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time per each folder of the data. The number of total files was reduced by an order of magnitude of $10^2$.\\
+The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrush\cite{filecrush}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time per each folder of the data. The number of total files was reduced by an order of magnitude of $10^2$.\\
 
 \textbf{Spark}
 The choice of this technology is motivated by size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. \\
 The second advantage is that we would like to make multiple transformations to the data and Spark allows to easily cache the intermediate results to be reused efficiently. In this way, there is no need continuously store the results and load them to be reused for the next MapReduce operation. One example is calculating the large region averages, for which we make use of the intermediate results of the worldwide regions (each one of equal size) analysis\ref{fig:analysis}. The caching feature is used multiple times throughout the execution and drastically improve the performance. \\
 
 \textbf{SURFsara Hadoop cluster}
-All the computation are executed on the SURFsara Hadoop cluster \footnote{\href{SURFsara Hadoop Cluster}{https://userinfo.surfsara.nl/systems/hadoop}} . The cluster is one of the largest Hadoop clusters for scientific research in the Netherlands. It is composed of 170 data/compute nodes with a total 1370 CPU-cores for parallel processing. The system has also a distributed file system that has a capacity of 2.3 PB. The cluster is shared and used by different users that needs an HPC infrastructure for their research.   
+All the computation are executed on the SURFsara Hadoop cluster \cite{surfsara}. The cluster is one of the largest Hadoop clusters for scientific research in the Netherlands. It is composed of 170 data/compute nodes with a total 1370 CPU-cores for parallel processing. The system has also a distributed file system that has a capacity of 2.3 PB. The cluster is shared and used by different users that needs an HPC infrastructure for their research.   
+
+\FloatBarrier
 
 \section{Experiments}
 \label{sec:exp}
@@ -215,16 +227,11 @@ The basic steps that both analysis perform are:
 The aim of this analysis is to calculate the temperature statistics (mean, maximum, minimum and standard deviation) on every area of the earth for which we have data. After that we can compare the situation for the same areas in different time frames and show it with a world map view (as shown in \ref{sec:map}). \\
 The first problem is that while the regions we want to compare are the same size and uniformly distributed around the earth, the stations are not. Furthermore a lot of stations are added and removed during the flow of the years, this means that the data of a new station couldn't be compared with any data of the previous years even if in the previous years there was a station very close to the new added station. So we defined regions of size 1\degree latitude and 1\degree longitude. This is approximately the area covered by the region of Holland in the Netherlands. Then we assigned each measurement (for each one there is the coordinates reported) to a region. \\
 Our analysis proceeded by loading five consecutive years of measurements at a time, group them in small regions and, for each region, calculate the arithmetic mean, the minimum, the maximum temperature and the standard deviation. This was done for all years from 1901 to 2015 (the year 2016 was excluded from the analysis due to incomplete data).\\
-\subsection{Median}
+\subsubsection{Median}
 Another value we wanted to extract from the datasets is the median. We implemented the code to calculate it, but we didn't have enough time to test it and obtain the results for all the datasets. The problem with calculating the median is that it is not a commutative and associative operation (the median of medians is not the median of the entire group). This means that there is no easy way to use the reduce function to combine results computed in different machines in a distributed way. The simple way to calculate the median is to sort the desired data and look at the value in the middle. The problem with this solution is that it's not scalable. Indeed, applied to datasets in the order of GB in sizes this operation is very slow. Work has been done by various researchers to tackle this kind of problems and improve the efficiency of non associative operations (\cite{liu2009computing}).
 
-\subsection{Results format}
-The results computed by the program we developed with Spark are stored in HDFS with the CSV format. The results are stored in multiple HDFS folders, one per each year. Inside each folder there are multiple CSV files with portions of the yearly results. To collect the results from HDFS and compact them we developed a script that merges the files in each folder in two CSV files per each year. One file contains the minimum and the maximum temperature for each latitude and longitude quadrant. The other file contains the value of the average and of the standard deviation of the temperature.
-The script, in addition to the two CSV files, creates two JSON files with the same information. Those files will simplify the parsing of the data in the graphical user interface that is developed with javascript. 
-\\ The results of the zonal analysis are stored in one single CSV file per each zone containing one row per each year. With this format it is easy to create some charts about the change of the temperature for that zone during the years.
 
-
-\subsection{Temperature yearly trends analysis}
+\subsection{Zonal Analysis}
 In this type of analysis we focused on some particular large areas of on the earth. We selected the regions that for which we have more and better distributed data available. The selected regions are:
 \begin{itemize}
     \item United States: from coordinate N\ang{50;;} W\ang{128;;} to N\ang{24;;} W\ang{65;;};
@@ -232,35 +239,6 @@ In this type of analysis we focused on some particular large areas of on the ear
     \item Australia: from coordinate S\ang{9;;} E\ang{111;;} to S\ang{44;;} E\ang{156;;};
 \end{itemize}
 For each region we calculated minimum, maximum, average and standard deviation of every year until 2015. The year range is chosen based on the availability of data. 
-
-\section{Results}
-\label{sec:res}
-In this section we report the results obtained from the analysis described in section \ref{sec:exp}. 
-
-\subsection{Interactive map}
-\label{sec:map}
-The first tool we worked on is a dynamic map that allows to visualize the difference between temperature values (average, maximum, minimum and standard deviation) between two datasets. Each dataset is created from the analysis one described in section \ref{sec:exp} and are composed of the aggregated results of the five yearly analysis in which we divided the surface in small regions of 1\degree latitude and 1\degree longitude. \\
-We used the map provided by Google\footnote{\href{Google Maps}{https://developers.google.com/maps/}}. We created a custom heatmap that shows on each region of the map different colors to show an increase or decrease for a particular value in that region (shades of blue for reduction and red for a gain). The interface can be seen in figure \ref{fig:interface}
-
-\begin{figure}[tbh]
-\includegraphics[width=1\linewidth]{interface}
-\caption{Interactive map interface example}
-\label{fig:interface}
-\end{figure}
-
-In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squares in the map. In the interface there is also the possibility to change the temperature metric that is used to compared the two set of results.\\
-One problem of the interface is that the colored squares used in the map should change their height depending on the latitude value where they are positioned because the map projection isn't equiareal. The consequence in the heatmap visualization is that there is some empty space between the squares of a certain latitude value and the squares with the value of the latitude increased or decreased by one. This aspect makes the heatmap looks like as it is missing some data for certain latitude when instead the data are present, just the squares should be rectangles with a bigger height value.\\
-
-By using the interactive map it is possible to notice an increase of avarage temperature in Europe and in Asia in the years from 1970 to the current years. In figure \ref{img:increaseMap} it is possible to see an example of increase between the two interval 1976/1980 to 2011/2015. The red colors are dominant in all the figure. Showing an increase of at least 2.5 degrees for all the regions that have a red square over them.
-
-\begin{figure}[tbh]
-\includegraphics[width=1\linewidth]{increaseEurope}
-\caption{Map that shows the increase of the average temperature in Europe and in Asia between 1976 and 2015.}
-\label{fig:interface}
-\end{figure}
-
-\subsection{Zonal Analysis}
-In this section we report the results of the regional analysis done for: Europe, United States and Australia. We start considering the amount of data available from each region for each year. 
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stationsRegion}
@@ -274,7 +252,51 @@ The chart in figure \ref{fig:stationsRegion} shows the surface coverage of the s
     \item There may be areas in the regions where it's more difficult to have an uniform stations coverage because of geomorphological reasons. For instance, there are far less regions covered in the middle part of Australia due to its desert climate, that makes it more difficult to install, maintain and monitor the stations.
 \end{itemize}
 
-Now we move on to consider the average analysis on the three selected regions. 
+
+\subsection{Results format}
+The results computed by the program we developed with Spark are stored in HDFS with the CSV format. The results are stored in multiple HDFS folders, one per each year. Inside each folder there are multiple CSV files with portions of the yearly results. To collect the results from HDFS and compact them we developed a script that merges the files in each folder in two CSV files per each year. One file contains the minimum and the maximum temperature for each latitude and longitude quadrant. The other file contains the value of the average and of the standard deviation of the temperature.
+The script, in addition to the two CSV files, creates two JSON files with the same information. Those files will simplify the parsing of the data in the graphical user interface that is developed with javascript. 
+\\ The results of the zonal analysis are stored in one single CSV file per each zone containing one row per each year. With this format it is easy to create some charts about the change of the temperature for that zone during the years.
+
+
+
+\FloatBarrier
+
+\section{Results}
+\label{sec:res}
+In this section we report the results obtained from the analysis described in section \ref{sec:exp}. 
+
+\subsection{Interactive map}
+\label{sec:map}
+The first tool we worked on is a dynamic map that allows to visualize the difference between temperature values (average, maximum, minimum and standard deviation) between two datasets. Each dataset is created from the analysis one described in section \ref{sec:exp} and are composed of the aggregated results of the five yearly analysis in which we divided the surface in small regions of 1\degree latitude and 1\degree longitude. \\
+We used the map provided by Google\cite{maps}. We created a custom heatmap that shows on each region of the map different colors to show an increase or decrease for a particular value in that region (shades of blue for reduction and red for a gain). The interface can be seen in figure \ref{fig:interface}
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{interface}
+\caption{Interactive map interface example}
+\label{fig:interface}
+\end{figure}
+
+In the graphic interface there is the possibility to select the two set of five-year results to compare. The heatmap shows a colored square in a latitude and longitude quadrant if it's present a data for that quadrant in both the two sets of results. Till the period 1921-1925 there are few data in the results, with consequently few colored squares in the map. In the interface there is also the possibility to change the temperature metric that is used to compared the two set of results.\\
+One problem of the interface is that the colored squares used in the map should change their height depending on the latitude value where they are positioned because the map projection isn't equiareal. The consequence in the heatmap visualization is that there is some empty space between the squares of a certain latitude value and the squares with the value of the latitude increased or decreased by one. This aspect makes the heatmap looks like as it is missing some data for certain latitude when instead the data are present, just the squares should be rectangles with a bigger height value.\\
+
+By using the interactive map it is possible to notice an increase of the global temperature in the years from 1975 to the current years. In figure \ref{img:increaseMap} it is possible to see an example of increase of the average temperature between the two interval 1976/1980 to 2011/2015 in Europe and in Asia. The red colors are dominant in all the figure. Showing an increase of at least 2.5 degrees for all the regions that have a red square over them.
+In figure \ref{img:increaseGlobal} it is possible to see how the minimum temperature is increased for the same two intervals of years in the majority of regions of the world.
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{increaseEurope}
+\caption{Map that shows the increase of the average temperature in Europe and in Asia between 1976 and 2015.}
+\label{fig:interface}
+\end{figure}
+
+\begin{figure}[tbh]
+\includegraphics[width=1\linewidth]{increaseGlobal}
+\caption{Map that shows the increase of the minimum temperature globally between 1976 and 2015.}
+\label{fig:interface}
+\end{figure}
+
+\subsection{Zonal Analysis}
+In this section we report the results of the regional analysis done for: Europe, United States and Australia.
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{averageRegions}
@@ -325,6 +347,7 @@ For the Australia data the most interesting fact we notice is a sudden plunge in
 In figure \ref{fig:stdev} we plotted the value of the standard deviation per statistics and per region. It's clear that the values of maximum and minimum have larger fluctuation than the average. This may be caused by one or a few erroneous data report caused by environmental accidents. Interesting to note that the minimum value have a way larger standard deviation that the maximum. By correlating this with the stations distribution we came to the conclusion that this is caused by the installation of new stations in more remote and difficult to access regions (e.g. Arctic ocean and mountain regions). \\
 Moreover, the minimum standard deviation for the Australian region was suspect, because the lowest temperature registered for the region is -23.4\degree C\cite{ausTemp}, so it's difficult to expect a standard deviation similar to that of the European region or even higher that that of the American one. After analyzing the data we found out erroneous data coming from the south east region of Australia reporting temperature of around -70\degree C.
 
+\FloatBarrier
 
 \section{Conclusions}
 \label{sec:con}
@@ -345,43 +368,49 @@ To improve the data quality we could divide the temperature data by time of day.
 Another interesting analysis that can be performed is dividing the regions by latitude bands. We expect that regions in the same latitude have lower differences in temperature so we could expect a more stable average temperature and less fluctuations in minimum/maximum values. The same reasoning can be done for seasons. In particular it would be particularly interesting to see the temperature changes by season for a fixed region and compare the season analysis (e.g. see if all seasons show the same curve or not).\\ 
 An intriguing data source we had available but didn't use yet is the Arctic ice surface coverage. Since this is directly correlated with global temperature and is also one of the most monitored metric in recent years (due to its effects on the ecosystem), we think it can help in strengthening our conclusions. We didn't investigate further this path because our understanding of the data sources was limited and required more time than we expected to interpret correctly the data.
 
+\clearpage
 
-
-\newpage
 \appendix
 \section{Stations distribution} \label{App:AppendixA}
 Here is an overview of the stations for some selected years. We decided to show only years in which the number and position of the stations is significantly different than in the previous or following years.
 
 \begin{figure}[tbh]
+
 \includegraphics[width=1\linewidth]{stations1907}
 \caption{Wheater stations used in 1907. In the first years we only have measurements coming from stations in Finland}
 \label{fig:stations1907}
 \end{figure}
+
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1930}
 \caption{Wheater stations used in 1930. Here we can see the stations cover the most part of central Europe. The problem we encountered is that there is no continuity in the stations that are used between consecutive years, so it's difficult to make comparisons.}
 \label{fig:stations1930}
 \end{figure}
+
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1945}
 \caption{Wheater stations used in 1945. Around this year we start to have a relevant number of stations that cover most part of the surface.}
 \label{fig:stations1945}
 \end{figure}
+
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1968}
 \caption{Wheater stations used in 1968. In the late 60s we notice a sudden drop in the earth coverage compared to the previous years. We took this into account when making the analysis.}
 \label{fig:stations1968}
 \end{figure}
+
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1972}
 \caption{Wheater stations used in 1972. As shown in figure \ref{fig:stations}, we noticed a sudden drop in the number of stations for this year. In particular we observe the absence of stations from east Europe and the ex Soviet Union Area.}
 \label{fig:stations1972}
 \end{figure}
+
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations1980}
 \caption{Wheater stations used in 1980. From this year onwards we have a large number of stations covering most part of the surface.}
 \label{fig:stations1980}
 \end{figure}
+
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations2014}
 \caption{Wheater stations used in 2014.}
@@ -389,13 +418,11 @@ Here is an overview of the stations for some selected years. We decided to show 
 \end{figure}
 
 
-
-
+\FloatBarrier
 \clearpage
 %\end{document}  % This is where a 'short' article might terminate
 
 % ensure same length columns on last page (might need two sub-sequent latex runs)
-\balance
 
 %ACKNOWLEDGMENTS are optional
 %\section{Acknowledgments}
@@ -404,8 +431,6 @@ Here is an overview of the stations for some selected years. We decided to show 
 % The following two commands are all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
-\bibliographystyle{ieeetr}
-\bibliography{vldb_sample}  % vldb_sample.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
@@ -413,8 +438,8 @@ Here is an overview of the stations for some selected years. We decided to show 
 
 %Generated by bibtex from your ~.bib file.  Run latex,
 %then bibtex, then latex twice (to resolve references).
-
-
+\balance
+\printbibliography
 
 
 \end{document}
