@@ -21,7 +21,7 @@
 \usepackage[bottom]{footmisc}
 
 \usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
-\graphicspath{{images/}} 
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -106,8 +106,8 @@ In the following sections we first describe the context of our work and the rela
 
 \section{Related Work}
 \label{sec:rel}
-Studies on global and regional surface temperature change has been done in past. Researchers showed that the rate of temperature increase has been higher in the last quarter of the century that it has been in the previous years of the 20\^{th} century. Moreover they calculated an increase in the average global five year mean of about 1\celsius~\cite{hansen1999giss}. This recent trend is particularly important if we consider the temperature changes in the past millennium, and can be considered an unprecedented anomaly\cite{mann1999northern}. More recent studies also show that the mean annual temperature has not risen in the last twenty years, despite the continuous increase of GHGs in the atmosphere\cite{kosaka2013recent}. This suggests that either the global warming phenomenon that was registered in the period 1975-2000 had different causes or that the more recent stable trend has an origin that balance the greenhouse effects.
-Research done on the temperature changes in the last century in the U.S. shows that the yearly mean trend is slightly different than the worldwide one. Indeed, we in the U.S., temperature somewhat decreased from 1930 to 1980, and a warming trend has returned only in the last decades of the century\cite{hansen1999giss}.  
+Studies on global and regional surface temperature change has been done in past. Researchers showed that the rate of temperature increase has been higher in the last quarter of the century that it has been in the previous years of the 20th century. Moreover they calculated an increase in the average global five year mean of about 1\celsius~\cite{hansen1999giss}. This recent trend is particularly important if we consider the temperature changes in the past millennium, and can be considered an unprecedented anomaly\cite{mann1999northern}. More recent studies also show that the mean annual temperature has not risen in the last twenty years, despite the continuous increase of GHGs in the atmosphere\cite{kosaka2013recent}. This suggests that either the global warming phenomenon that was registered in the period 1975-2000 had different causes or that the more recent stable trend has an origin that balance the greenhouse effects.
+Research done on the temperature changes in the last century in the U.S. shows that the yearly mean trend is slightly different than the worldwide one. Indeed, in the U.S., temperature somewhat decreased from 1930 to 1980, and a warming trend has returned only in the last decades of the century\cite{hansen1999giss}.
 
 \FloatBarrier
 
@@ -124,7 +124,7 @@ Then we are going to perform different analysis on the temperature data and comp
 In this section we explain in more detail how we performed the analysis, what tools we used and the preliminary work on the data before the analysis.
 
 \subsection{Data Format}
-The public NOAA data repository contains a file for each station for each year. The name of each file is \{USAF code\}\-\{WBAN code\}-\{year\}, where USAF is the Air Force Station ID and the WBAN is the NCDC (National Climate Data Center) station number. The number of station for each year is shown in figure \ref{fig:stations}. As we can see the number of stations has steadily increased during the years. More importantly, we have to be aware of the results we obtain analyzing years where the number of stations is very low. Since the distribution of the station around the world is not uniform and they don't cover every area, it's difficult to obtain correct results on the global scale. What we can do is to consider the fluctuation of data for the same station or for stations that are near together (this will be done by regional grouping, as described in section \ref{sec:pro}). Each station reports data multiple times a day (depending on the station) and for each day of the year. \\
+The public NOAA data repository contains a file for each station for each year. The name of each file is \{USAF code\}\-\{WBAN code\}-\{year\}, where USAF is the Air Force Station ID and the WBAN is the NCDC (National Climate Data Center) station number. The number of station for each year is shown in figure \ref{fig:stations}. As we can see the number of stations has steadily increased during the years. More importantly, we have to be aware of the results we obtain analyzing years where the number of stations is very low. Since the distribution of the station around the world is not uniform and they don't cover every area, it's difficult to obtain correct results on the global scale. What we can do is to consider the fluctuation of data for the same station or for stations that are near together (this will be done by regional grouping, as described in section \ref{sec:exp}). Each station reports data multiple times a day (depending on the station) and for each day of the year. \\
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{data}
@@ -138,7 +138,7 @@ Each measurement comes in a form similar to what \ref{fig:data} shows. The infor
 \subsection{Temperature data quality}
 \label{sec:filter}
 Before using the actual temperature data, we filtered it through a custom quality check. Each measurement come with a quality flag set at a different value depending on how reliable the measurement was\cite{noaaDataFormat}.
-It is important to use this flag to remove wrong data in the dataset, as reported in the document provided by NOAA that describes the problem inside the dataset \cite{noaaProblems}: ``Various, mostly random errors, are present in the overall dataset, and these are being documented and scheduled for correction. Quality control of the data
+It is important to use this flag to remove wrong data in the dataset, as reported in the document provided by NOAA that describes the problems inside the dataset\cite{noaaProblems}: ``Various, mostly random errors, are present in the overall dataset, and these are being documented and scheduled for correction. Quality control of the data
 (which has already taken place and reflected in the online data) has corrected
 well over 99 percent of the errors present in the original data prior to the quality control.''
 In particular we accepted all the measurement with the following quality code value:
@@ -155,10 +155,10 @@ In particular we accepted all the measurement with the following quality code va
     \item U: Data value replaced with edited value.
 \end{itemize}
 We opted for a loose policy on the data quality, accepting also values that didn't pass all the quality checks or that were manually or software replaced. We refuted all the codes that stand for erroneous, missing or suspect data that was not manually or automatically checked and replaced by the institution. Furthermore, we applied a bound check for all the values greater than the maximum registered temperature (+61.8 \celsius) and the minimum one (-93.2 \celsius). \\
-The data collected can be of two different types depending on the origin: from a fixed weather station or from a mobile one. In the second case, it's possible that the data registered from a mobile station (e.g. on a ship) is reported at a certain position and the following measurement is reported at a different position. Since we didn't distinguish data by time of the day, it's important that the number of measurements from a certain position is approximately the same for different hours. Since this is not guaranteed by moving stations, we decided to filter the measurement obtained from this source. \\
+The data collected can be of two different types depending on the origin: from a fixed weather station or from a mobile one. In the second case, it's possible that the data registered from a mobile station (e.g. on a ship) is reported at a certain position and the following measurement is reported at a different position. Since we dont't distinguish data by time of the day, it's important that the number of measurements from a certain position is approximately the same for different hours. Since this is not guaranteed by moving stations, we decided to filter the measurement obtained from this source. \\
 
 \subsection{Data Sources}
-An important aspect we had to consider before proceeding with the analysis is the distribution of weather station on the globe. First we considered the number of stations per year\ref{fig:stations}. Then we analyzed the position of the stations for each year (some notable sample are reported in appendix \ref{App:AppendixA}). 
+An important aspect we had to consider before proceeding with the analysis is the distribution of weather station on the globe. First we considered the number of stations per year\ref{fig:stations}. Then we analyzed the position of the stations for each year (some notable sample are reported in appendix \ref{App:AppendixA}).
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stations}
@@ -179,10 +179,10 @@ The important things to consider before proceeding with the analysis are:
 The technological environment we decided to use for this project consist of:
 \begin{itemize}
     \item \textbf{HDFS}\cite{hadoop}: a distributed file system that allows the developers to store and retrieve large quantity of data between multiple machines as if it was a single one;
-    \item \textbf{Spark}\cite{spark}: programming framework to develop applications for large scale data processing on horizontally scalable clusters.
+    \item \textbf{Spark}\cite{spark}: programming framework to develop applications for large scale data processing on horizontally scalable clusters;
+    \item \textbf{SURFsara Hadoop Cluster}: the hardware resources that will be used to run the computations.
 \end{itemize}
 
-\textbf{HDFS}
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{dataSize}
@@ -190,14 +190,15 @@ The technological environment we decided to use for this project consist of:
 \label{fig:dataSize}
 \end{figure}
 
+\textbf{HDFS}
 The data stored in the distributed file system is grouped in folders by year. As shown in figure \ref{fig:dataSize} the size of the data to analyze is very different between the years. Inside each folder, there is a file for each station that reported measurements. HDFS is not very efficient when working with many small files\cite{zhang2012improving}, as in our case. The solution we opted to use is to merge the small files in bigger files that have the same size as Hadoop's default block size. To merge the files we used filecrush\cite{filecrush}. This tool merges small files, located inside an HDFS instance, into bigger files with the size of a multiplier of an HDFS block. We have run this tool one time for each folder of the data. The number of total files was reduced by an order of magnitude of $10^2$.\\
 
 \textbf{Spark}
-The choice of this technology is motivated by size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. \\
-The second advantage is that we would like to make multiple transformations to the data and Spark allows to easily cache the intermediate results to be reused efficiently. In this way, there is no need continuously store the results and load them to be reused for the next MapReduce operation. One example is calculating the large region averages, for which we make use of the intermediate results of the worldwide regions (each one of equal size) analysis\ref{fig:analysis}. The caching feature is used multiple times throughout the execution and drastically improve the performance. \\
+The choice of this technology is motivated by the size of the data and the type of the analysis we want to execute. First, Spark is more efficient than Hadoop's own MapReduce\cite{dean2008mapreduce} implementation when the data used can fit in memory. Since our approach is to analyze one or a few years at a time, we calculated that the size of the data is small enough to stay in memory for our purposes. \\
+The second advantage is that we would like to make multiple transformations to the data and Spark allows to easily cache the intermediate results to be reused efficiently. In this way, there is no need to continuously store the results and load them to be reused for the next MapReduce operation. One example is calculating the large region averages, for which we make use of the intermediate results of the worldwide regions (each one of equal size) analysis\ref{fig:analysis}. The caching feature is used multiple times throughout the execution and drastically improve the performance. \\
 
 \textbf{SURFsara Hadoop cluster}
-All the computation are executed on the SURFsara Hadoop cluster \cite{surfsara}. The cluster is one of the largest Hadoop clusters for scientific research in the Netherlands. It is composed of 170 data/compute nodes with a total 1370 CPU-cores for parallel processing. The system has also a distributed file system that has a capacity of 2.3 PB. The cluster is shared and used by different users that needs an HPC infrastructure for their research.   
+All the computation are executed on the SURFsara Hadoop cluster\cite{surfsara}. The cluster is one of the largest Hadoop clusters for scientific research in the Netherlands. It is composed of 170 data/compute nodes with a total 1370 CPU-cores for parallel processing. The system has also a distributed file system that has a capacity of 2.3 PB. The cluster is shared and used by different users that needs an HPC infrastructure for their research.
 
 \FloatBarrier
 
@@ -215,7 +216,7 @@ We performed two main type of analysis: a five year span analysis that considers
 The basic steps that both analysis perform are:
 \begin{enumerate}
     \item Load data in memory;
-    \item Parse the raw data to obtain an list of StationData (a type that represent a measurement);
+    \item Parse the raw data to obtain a list of StationData (a type that represent a measurement);
     \item Filter data following the scheme indicated in \ref{sec:filter};
     \item Group the measurements in regions;
     \item Execute yearly analysis;
@@ -225,7 +226,7 @@ The basic steps that both analysis perform are:
 
 \subsection{Regional five year period analysis}
 The aim of this analysis is to calculate the temperature statistics (mean, maximum, minimum and standard deviation) on every area of the earth for which we have data. After that we can compare the situation for the same areas in different time frames and show it with a world map view (as shown in \ref{sec:map}). \\
-The first problem is that while the regions we want to compare are the same size and uniformly distributed around the earth, the stations are not. Furthermore a lot of stations are added and removed during the flow of the years, this means that the data of a new station couldn't be compared with any data of the previous years even if in the previous years there was a station very close to the new added station. So we defined regions of size 1\degree latitude and 1\degree longitude. This is approximately the area covered by the region of Holland in the Netherlands. Then we assigned each measurement (for each one there is the coordinates reported) to a region. \\
+The first problem is that while the regions we want to compare are of the same size and uniformly distributed around the earth, the stations are not. Furthermore a lot of stations are added and removed during the flow of the years, this means that the data of a new station can't be compared with any data of the previous years even if in the previous years there was a station very close to the new added station. So we defined regions of size 1\degree latitude and 1\degree longitude. This is approximately the area covered by the region of Holland in the Netherlands. Then we assigned each measurement (for each one there is the coordinates reported) to a region. \\
 Our analysis proceeded by loading five consecutive years of measurements at a time, group them in small regions and, for each region, calculate the arithmetic mean, the minimum, the maximum temperature and the standard deviation. This was done for all years from 1901 to 2015 (the year 2016 was excluded from the analysis due to incomplete data).\\
 \subsubsection{Median}
 Another value we wanted to extract from the datasets is the median. We implemented the code to calculate it, but we didn't have enough time to test it and obtain the results for all the datasets. The problem with calculating the median is that it is not a commutative and associative operation (the median of medians is not the median of the entire group). This means that there is no easy way to use the reduce function to combine results computed in different machines in a distributed way. The simple way to calculate the median is to sort the desired data and look at the value in the middle. The problem with this solution is that it's not scalable. Indeed, applied to datasets in the order of GB in sizes this operation is very slow. Work has been done by various researchers to tackle this kind of problems and improve the efficiency of non associative operations (\cite{liu2009computing}).
@@ -238,7 +239,7 @@ In this type of analysis we focused on some particular large areas of on the ear
     \item Europe: from coordinate N\ang{71;;} W\ang{11;;} to N\ang{35;;} E\ang{41;;};
     \item Australia: from coordinate S\ang{9;;} E\ang{111;;} to S\ang{44;;} E\ang{156;;};
 \end{itemize}
-For each region we calculated minimum, maximum, average and standard deviation of every year until 2015. The year range is chosen based on the availability of data. 
+For each region we calculated minimum, maximum, average and standard deviation of every year until 2015. The year range is chosen based on the availability of data.
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{stationsRegion}
@@ -255,7 +256,7 @@ The chart in figure \ref{fig:stationsRegion} shows the surface coverage of the s
 
 \subsection{Results format}
 The results computed by the program we developed with Spark are stored in HDFS with the CSV format. The results are stored in multiple HDFS folders, one per each year. Inside each folder there are multiple CSV files with portions of the yearly results. To collect the results from HDFS and compact them we developed a script that merges the files in each folder in two CSV files per each year. One file contains the minimum and the maximum temperature for each latitude and longitude quadrant. The other file contains the value of the average and of the standard deviation of the temperature.
-The script, in addition to the two CSV files, creates two JSON files with the same information. Those files will simplify the parsing of the data in the graphical user interface that is developed with javascript. 
+The script, in addition to the two CSV files, creates two JSON files with the same information. Those files will simplify the parsing of the data in the graphical user interface that is developed with javascript.
 \\ The results of the zonal analysis are stored in one single CSV file per each zone containing one row per each year. With this format it is easy to create some charts about the change of the temperature for that zone during the years.
 
 
@@ -264,7 +265,7 @@ The script, in addition to the two CSV files, creates two JSON files with the sa
 
 \section{Results}
 \label{sec:res}
-In this section we report the results obtained from the analysis described in section \ref{sec:exp}. 
+In this section we report the results obtained from the analysis described in section \ref{sec:exp}.
 
 \subsection{Interactive map}
 \label{sec:map}
@@ -304,19 +305,19 @@ In this section we report the results of the regional analysis done for: Europe,
 \label{fig:averageRegions}
 \end{figure}
 
-In figure \ref{fig:averageRegions} we show the evolution of both the average and the 5-year average for the three region we considered. The first thing to consider is that the in the earlier years we have less data available. For instance in Europe, we have data mostly from stations in Finland for the period 1901-1930. This explain two anomalies in the chart:
+In figure \ref{fig:averageRegions} we show the evolution of both the average and the 5-year average for the three region we considered. The first thing to consider is that in the earlier years we have less data available. For instance in Europe, we have data mostly from stations in Finland for the period 1901-1930. This explain two anomalies in the chart:
 \begin{itemize}
     \item A sudden change in the average temperature between two time frames (the sudden increase in the average temperature for Europe is caused by the presence of new stations in warmer areas);
     \item The variance of annual temperatures is more evident in the years with less data and stabilizes for all three regions from the last decades of the century.
 \end{itemize}
 
 \subsubsection{Temperature Anomalies}
-In figure \ref{fig:UsAnomalies}, \ref{fig:EuAnomalies} and \ref{fig:AuAnomalies} we used the same method described by Hansen (\cite{hansen1999giss}) to calculate the temperature anomalies for each dataset. We first calculated a total average value for each region for the time frame examined. Then we calculated the difference between the yearly average values and the total obtained. In this way it's easier to spot extremely hot or cold years and a general temperature trend. 
+In figure \ref{fig:UsAnomalies}, \ref{fig:EuAnomalies} and \ref{fig:AuAnomalies} we used the same method described by Hansen (\cite{hansen1999giss}) to calculate the temperature anomalies for each dataset. We first calculated a total average value for each region for the time frame examined. Then we calculated the difference between the yearly average values and the total obtained. In this way it's easier to spot extremely hot or cold years and a general temperature trend.
 
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{UsAnomalies}
-\caption{Average and 5-year average for three different regions.}
+\caption{Avarage temperature anomalies in the U.S.}
 \label{fig:UsAnomalies}
 \end{figure}
 
@@ -324,7 +325,7 @@ From the US chart (\ref{fig:UsAnomalies}) the interesting thing to notice is a s
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{EuAnomalies}
-\caption{Average and 5-year average for three different regions.}
+\caption{Avarage temperature anomalies in Europe.}
 \label{fig:EuAnomalies}
 \end{figure}
 
@@ -332,17 +333,19 @@ The EU chart shows, starting from the late 70s, a pretty clear trend of temperat
 
 \begin{figure}[tbh]
 \includegraphics[width=1\linewidth]{AuAnomalies}
-\caption{Average and 5-year average for three different regions.}
+\caption{Avarage temperature anomalies in Australia.}
 \label{fig:AuAnomalies}
 \end{figure}
 
-For the Australia data the most interesting fact we notice is a sudden plunge in the temperature during the 80s. This can be explained by looking at the stations number chart for that region, that manifest a decrease for the same period of time. As for the European situation, we can see a slight increase in the average temperature, that is confirmed by the results of other studies, that shows an increase of the average temperature for the Australian continent of about 0.8\degree. 
+For the Australia data the most interesting fact we notice is a sudden plunge in the temperature during the 80s. This can be explained by looking at the stations number chart for that region, that manifest a decrease for the same period of time. As for the European situation, we can see a slight increase in the average temperature, that is confirmed by the results of other studies, that shows an increase of the average temperature for the Australian continent of about 0.8\degree.
+
+
 
 \subsubsection{Standard Deviation analysis}
 \begin{figure}[tbh]
-\label{fig:stdev}
 \includegraphics[width=1\linewidth]{stdev}
 \caption{Standard deviation for Average, Minimum and Maximum values per region.}
+\label{fig:stdev}
 \end{figure}
 In figure \ref{fig:stdev} we plotted the value of the standard deviation per statistics and per region. It's clear that the values of maximum and minimum have larger fluctuation than the average. This may be caused by one or a few erroneous data report caused by environmental accidents. Interesting to note that the minimum value have a way larger standard deviation that the maximum. By correlating this with the stations distribution we came to the conclusion that this is caused by the installation of new stations in more remote and difficult to access regions (e.g. Arctic ocean and mountain regions). \\
 Moreover, the minimum standard deviation for the Australian region was suspect, because the lowest temperature registered for the region is -23.4\degree C\cite{ausTemp}, so it's difficult to expect a standard deviation similar to that of the European region or even higher than that of the American one. After analyzing the data we found out erroneous data coming from the south east region of Australia reporting temperature of around -70\degree C.
@@ -352,7 +355,7 @@ Moreover, the minimum standard deviation for the Australian region was suspect, 
 \section{Conclusions}
 \label{sec:con}
 Before answering the question we asked earlier we will take a brief general overview of the characteristics of this project. One of the main problem we encountered is the limited (if not absence) of documentation describing the data. Especially for the older datasets we had to directly analyze the data to know the origin (region on earth) or the time coverage (day/night reports, coverage of all months). Moreover, we had to take into account during the analysis and the result discussion the anomalies we discovered in the station number charts (\ref{App:AppendixA}). Without a uniform and well formed source it's more difficult to extract reliable statistics.\\
-We are overall satisfied with the performance of the program developed with Spark for analyzing the data. The program is able to analyze the entire dataset in approximately 8 hours. The program is also scalable to the data size. Future data in the next years will probably grow in dimensions, Spark can automatically handle new resources available in the cluster if there is the need. Furthermore the structure of the program allows also to manage the growth of the data by computing some intermediate results on the yearly data. The five year analysis is performed only on these intermediate results that are way smaller than the initial data. This feature removes the need to join all the data of the five years.\\
+We are overall satisfied with the performance of the program developed with Spark for analyzing the data. The program is able to analyze the entire dataset in approximately 8 hours. The program is also scalable to the data size. Future data in the next years will probably grow in size, Spark can automatically handle new resources available in the cluster if there is the need. Furthermore the structure of the program allows to manage the growth of the data by computing some intermediate results on the yearly data. The five year analysis is performed only on these intermediate results that are way smaller than the initial data. This feature removes the need to join all the data of the five years.\\
 Other two aspect that improve the performance are the step we performed to group the big amount of files, and the caching of the data after the operations of parsing, filtering and grouping. The first improvement makes HDFS to be faster because it performs much better with a smaller amount of bigger files. The second improvement allows to compute different analysis on the same data without redoing some computation that are needed in the different types of analysis.\\
 
 For what concerns the metrics used for analyzing the data, the average temperature is the most useful metric. It shows clearly the increase of the temperature in different periods. Also, it's stable even if some particular events happen in short periods of the year. Minimum and maximum temperature are more susceptible to those events and indeed they show less clearly the increase of the temperature in the periods where the average metric reveals the increase. The standard deviation metric is useful to understand if there are errors in the data or if the data are not uniformly distributed (e.g. when the distributions of the stations is changed during the five year of the grouped results then the standard deviation results higher).
@@ -365,7 +368,7 @@ What we miss in the picture is the data coming from most of the oceanic areas an
 \subsection{Future Improvements}
 Due to the limited amount of time available, there are many improvements to the analysis and other research path to discover for a better understanding of the dataset and the global warming phenomenon. \\
 To improve the data quality we could divide the temperature data by time of day. We assumed that all the station have a similar behavior (they collect temperature samples every fixed amount of time). Without this assumption the average temperature result could lean towards lower or higher temperatures depending on which the hours for which we have more data.\\
-Another interesting analysis that can be performed is dividing the regions by latitude bands. We expect that regions in the same latitude have lower differences in temperature so we could expect a more stable average temperature and less fluctuations in minimum/maximum values. The same reasoning can be done for seasons. In particular it would be particularly interesting to see the temperature changes by season for a fixed region and compare the season analysis (e.g. see if all seasons show the same curve or not).\\ 
+Another interesting analysis that can be performed is dividing the regions by latitude bands. We expect that regions in the same latitude have lower differences in temperature so we could expect a more stable average temperature and less fluctuations in minimum/maximum values. The same reasoning can be done for seasons. In particular it would be particularly interesting to see the temperature changes by season for a fixed region and compare the season analysis (e.g. see if all seasons show the same curve or not).\\
 An intriguing data source we had available but didn't use yet is the Arctic ice surface coverage. Since this is directly correlated with global temperature and is also one of the most monitored metric in recent years (due to its effects on the ecosystem), we think it can help in strengthening our conclusions. We didn't investigate further this path because our understanding of the data sources was limited and required more time than we expected to interpret correctly the data.
 
 \clearpage
