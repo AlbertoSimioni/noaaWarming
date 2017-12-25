@@ -1,5 +1,4 @@
-# noaa
-Global Warming Distributed Data Analysis
+# Global Warming Distributed Data Analysis
 
 Distributed data analysis through the Apache Spark Cluster of SURFsara
 We had access to more than one hundred years of weather (big) data provided by the NOAA (National Oceanic and Atmospheric Administration) organization. 
